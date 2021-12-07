@@ -1,0 +1,28 @@
+{
+    "name": "painmon-api",
+    "version": "1.0.0",
+    "description": "-   [ ] Base API -   [ ] Database -   [ ] Domain generator -   [ ] Documentation -   [ ] Optimization",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon --exec ts-node src/index.ts"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "apollo-server-express": "^3.5.0",
+        "class-validator": "^0.13.2",
+        "express": "^4.17.1",
+        "graphql": "^15.7.2",
+        "log4js": "^6.3.0",
+        "redis": "^4.0.0",
+        "reflect-metadata": "^0.1.13",
+        "type-graphql": "^1.1.1"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/node": "^16.11.12",
+        "nodemon": "^2.0.15"
+    }
+}
