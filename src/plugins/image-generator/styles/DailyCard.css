@@ -1,0 +1,21 @@
+.main-container {
+    background-color: antiquewhite;
+    text-align: center;
+    border: 5px solid black;
+    padding: 20px;
+    margin: 10px;
+}
+
+.daily-title {
+    font-size: 35px;
+    font-family: "Genshin";
+}
+
+.daily-container {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.character-container {
+    display: grid;
+}
