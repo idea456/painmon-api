@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
+import bodyParser from "body-parser";
 import { buildSchema } from "type-graphql";
 import initImageGenerator from "./plugins/image-generator";
 import { testBrowser } from "./plugins/image-generator/utils/browser";
@@ -9,7 +10,11 @@ import Database from "./database";
 import { DomainResolver } from "./resolvers/domainResolver";
 import { ArtifactResolver } from "./resolvers/artifactResolver";
 import { DailyResolver } from "./resolvers/dailyResolver";
-import { SchemaFieldTypes } from "redis";
+import {
+    ApolloServerPluginLandingPageGraphQLPlayground,
+    ApolloServerPluginLandingPageDisabled,
+} from "apollo-server-core";
+import cors from "cors";
 
 async function main() {
     const schema = await buildSchema({
@@ -22,6 +27,8 @@ async function main() {
 
     const server = new ApolloServer({
         schema,
+        introspection: true,
+        plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     });
 
     // const db = new Database({
@@ -93,6 +100,8 @@ async function main() {
     // db.setJSON("painmon:daily", domainsData);
 
     // Heroku dynamically assigns your app a port
+    app.use(cors());
+    app.use("/graphql", bodyParser.json());
     app.listen(process.env.PORT || 4000, () =>
         console.log("Express server started on http://localhost:4000:graphql"),
     );
