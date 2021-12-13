@@ -92,7 +92,8 @@ async function main() {
     // console.log(domainsData);
     // db.setJSON("painmon:daily", domainsData);
 
-    app.listen(4000, () =>
+    // Heroku dynamically assigns your app a port
+    app.listen(process.env.PORT || 4000, () =>
         console.log("Express server started on http://localhost:4000:graphql"),
     );
 }
