@@ -1,7 +1,7 @@
 {
     "name": "painmon-api",
     "version": "1.0.0",
-    "description": "-   [ ] Base API -   [ ] Database -   [ ] Domain generator -   [ ] Documentation -   [ ] Optimization",
+    "description": "-   [ ] Base API -   [ ] Database -  [ ] Domain generator -   [ ] Documentation -   [ ] Optimization",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
