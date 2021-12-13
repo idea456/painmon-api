@@ -5,11 +5,7 @@ let browser: puppeteer.Browser;
 export async function initializeBrowser(): Promise<void> {
     browser = await puppeteer.launch({
         headless: true,
-        args: [
-            "--no-sandbox",
-            "--disable-setuid-sandbox",
-            "--disable-dev-shm-usage",
-        ],
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 }
 
