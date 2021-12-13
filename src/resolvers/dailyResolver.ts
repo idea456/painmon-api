@@ -32,7 +32,7 @@ export class DailyResolver {
         return {
             date: today,
             day: days[today.getDay()],
-            domainCategories: DOMAINS["Momiji-Dyed Court"],
+            domainCategories: [DOMAINS["momiji-dyed_court"]],
             // TODO: implement this later
             artifacts: [artifact],
             image: await generateScreenshot(
