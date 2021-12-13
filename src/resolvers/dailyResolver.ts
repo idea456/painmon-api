@@ -1,4 +1,4 @@
-import { Arg, createUnionType, Query, Resolver } from "type-graphql";
+import { Query, Resolver } from "type-graphql";
 import { Daily } from "../schemas/daily";
 import { DOMAINS } from "../data/domains";
 import { ARTIFACTS } from "../data/artifacts";
