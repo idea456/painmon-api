@@ -8,13 +8,16 @@ export class ArtifactResolver {
 
     @Query((returns) => [Artifact])
     async getAllArtifacts(): Promise<Artifact[]> {
-        await Object.keys(ARTIFACTS).map((key) => {
-            const artifact = ARTIFACTS[key];
-            artifact.sets = Object.keys(artifact.sets).map(
-                (key) => artifact.sets[key],
-            );
-            this.artifactCollection.push(ARTIFACTS[key]);
-        });
+        if (this.artifactCollection.length === 0) {
+            await Object.keys(ARTIFACTS).map((key) => {
+                const artifact = ARTIFACTS[key];
+                artifact.sets = Object.keys(artifact.sets).map(
+                    (key) => artifact.sets[key],
+                );
+                this.artifactCollection.push(ARTIFACTS[key]);
+            });
+        }
+
         return this.artifactCollection;
     }
 

@@ -13,9 +13,11 @@ export class DomainResolver {
 
     @Query((returns) => [DomainCategory])
     async getAllDomainCategory(): Promise<DomainCategory[]> {
-        await Object.keys(DOMAINS).map((key) => {
-            this.domainCollection.push(DOMAINS[key]);
-        });
+        if (this.domainCollection.length === 0) {
+            await Object.keys(DOMAINS).map((key) => {
+                this.domainCollection.push(DOMAINS[key]);
+            });
+        }
         return this.domainCollection;
     }
 
