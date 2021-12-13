@@ -3,22 +3,62 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
-type Mutation {
-  addTodo(todoInput: TodoInput!): Todo!
+type Artifact {
+  bonuses: [String]
+  domain: String
+  id: ID
+  name: String
+  rarity: [Int]
+  setPiece: [Int]
+  sets: [String]
+}
+
+type Daily {
+  artifacts: [Artifact]
+  date: DateTime
+  day: String
+  domainCategories: [DomainCategory]
+  image: String
+}
+
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
+type Domain {
+  ar: Int
+  disorder: [String]
+  id: ID
+  level: Int
+  monsters: [Monster!]
+  name: String
+  reward: Reward
+  s: Int
+}
+
+type DomainCategory {
+  artifacts: [String]
+  domains: [Domain]
+  name: String
+}
+
+type Monster {
+  count: Int
+  id: ID
+  name: String
 }
 
 type Query {
-  getTodos: [Todo!]
+  getAllArtifacts: [Artifact]
+  getAllDomainCategory: [DomainCategory]
+  getArtifact(name: String): Artifact
+  getDaily: Daily
+  getDomainCategory(name: String): DomainCategory
 }
 
-type Todo {
-  description: String!
-  id: Float!
-  status: Boolean!
-  title: String!
-}
-
-input TodoInput {
-  description: String!
-  title: String!
+type Reward {
+  adventureExp: String
+  friendshipExp: String
+  mora: String
 }

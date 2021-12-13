@@ -1,13 +1,31 @@
 const template = `
 <div class="main-container">
-    <div class="daily-title">Today's materials</div>
+    <h1 class="daily-title">Today's farm guide</h1>
     <div class="daily-container">
+        <h3 class="daily-subtitle">Characters</h3>
         <div class="character-container">
-            <img src="ayaka_face.png" alt="Ayaya!" />
+            <img v-for="(character, key) in 8" class="character" src="/static/ayaka_face.png" alt="Ayaya!"/>
+        </div>
+        <h3 class="daily-subtitle">Materials</h3>
+        <div class="materials-container">
+            <img v-for="(character, key) in 8" class="character" src="/static/ayaka_face.png" alt="Ayaya!" />
         </div>
     </div>
 </div>
 `;
+
+// const template = `
+// <div class="main-container">
+//     <h1 class="daily-title">Today's farm guide</h1>
+//     <div class="daily-container">
+//         <div v-for="(i, k) in 5" class="character-container">
+//             <img class="character" src="/static/elegance.png" alt="Ayaya!" />
+//             <img v-for="(character, key) in 2" class="character" src="/static/ayaka_face.png" alt="Ayaya!"/>
+//         </div>
+
+//     </div>
+// </div>
+// `;
 
 const { defineComponent } = Vue;
 

@@ -14,6 +14,7 @@ export default async function initImageGenerator() {
     app.use("/views", express.static(__dirname + "/views"));
     app.use("/components", express.static(__dirname + "/components"));
     app.use("/fonts", express.static(__dirname + "/fonts"));
+    app.use("/static", express.static(__dirname + "/static"));
     app.use("/styles", express.static(__dirname + "/styles"));
     app.use(express.static(__dirname + "/public"));
 
