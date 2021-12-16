@@ -13,7 +13,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_ballad: {
         name: "Ballad",
-        day: ["monday", "thursday"],
+        day: ["wednesday", "saturday"],
         items: [
             itemList.teachings_of_ballad,
             itemList.guide_to_ballad,
@@ -23,6 +23,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_gold: {
         name: "Gold",
+        day: ["wednesday", "saturday"],
         items: [
             itemList.teachings_of_gold,
             itemList.guide_to_gold,
@@ -32,6 +33,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_resistance: {
         name: "Resistance",
+        day: ["tuesday", "friday"],
         items: [
             itemList.teachings_of_resistance,
             itemList.guide_to_resistance,
@@ -41,6 +43,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_diligence: {
         name: "Diligence",
+        day: ["tuesday", "friday"],
         items: [
             itemList.teachings_of_diligence,
             itemList.guide_to_diligence,
@@ -50,6 +53,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_prosperity: {
         name: "Prosperity",
+        day: ["monday", "thursday"],
         items: [
             itemList.teachings_of_prosperity,
             itemList.guide_to_prosperity,
@@ -59,6 +63,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_transience: {
         name: "Transience",
+        day: ["monday", "thursday"],
         items: [
             itemList.teachings_of_transience,
             itemList.guide_to_transience,
@@ -68,6 +73,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_elegance: {
         name: "Elegance",
+        day: ["tuesday", "friday"],
         items: [
             itemList.teachings_of_elegance,
             itemList.guide_to_elegance,
@@ -77,6 +83,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_light: {
         name: "Light",
+        day: ["wednesday", "saturday"],
         items: [
             itemList.teachings_of_light,
             itemList.guide_to_light,
