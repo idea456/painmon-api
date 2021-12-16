@@ -1,23 +1,21 @@
 import { Query, Resolver } from "type-graphql";
 import { Daily } from "../schemas/daily";
-import { DOMAINS } from "../data/domains";
-import { ARTIFACTS } from "../data/artifacts";
+import { ITEMS } from "../data/items";
+import { Item, ItemGroup } from "../schemas/item";
 import { generateScreenshot } from "../plugins/image-generator/utils/browser";
+import { compare, getterAll } from "../utils/accessors";
+import { ITEM_GROUP } from "../data/itemGroup";
+import { Character } from "../schemas/character";
+import { CHARACTERS } from "../data/characters";
 
 @Resolver(Daily)
 export class DailyResolver {
     private daily: Daily;
+    private farmableMaterials: Array<Object>;
 
     @Query((returns) => Daily)
     async getDaily(): Promise<Daily> {
         // dummy data for now
-        const artifact: any = ARTIFACTS["blizzard_strayer"];
-        artifact.sets = Object.keys(artifact.sets).map(
-            (key) => artifact.sets[key],
-        );
-
-        const art = [];
-        art.push(artifact);
 
         const today = new Date(Date.now());
         const days = [
@@ -29,12 +27,40 @@ export class DailyResolver {
             "Friday",
             "Saturday",
         ];
+        const day = days[today.getDay()];
+        let materials: Array<ItemGroup>;
+        if (day === "Sunday") {
+            materials = await getterAll<ItemGroup>(ITEM_GROUP);
+        } else {
+            materials = await compare<ItemGroup>(
+                ITEM_GROUP,
+                (item) =>
+                    day && item.day && item.day.includes(day.toLowerCase()),
+            );
+            // materials.map(
+            //     (material) => (this.farmableMaterials[material.name] = {}),
+            // );
+        }
+        const characterTodayComparator = (char) => {
+            let check = false;
+            char.material["book"].map((item) => {
+                if (item.day.includes(day.toLowerCase())) {
+                    // this.farmableMaterials[item.name] = char;
+                    check = true;
+                }
+            });
+            return check;
+        };
+        let characters: Array<Character> = await compare(
+            CHARACTERS,
+            characterTodayComparator,
+        );
+
         return {
             date: today,
-            day: days[today.getDay()],
-            domainCategories: [DOMAINS["momiji-dyed_court"]],
-            // TODO: implement this later
-            artifacts: [artifact],
+            day,
+            materials,
+            characters,
             image: await generateScreenshot(
                 "http://localhost:8000/views/daily.html",
             ),

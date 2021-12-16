@@ -13,12 +13,40 @@ type Artifact {
   sets: [String]
 }
 
+type Character {
+  ascension: [CharacterAscension]
+  element: Elemental
+  id: ID
+  material: CharacterMaterial
+  name: String
+  nation: String
+  rarity: Int
+  sex: String
+  stats: Stats
+}
+
+type CharacterAscension {
+  items: [CharacterAscensionItem]
+  mora: Int
+}
+
+type CharacterAscensionItem {
+  amount: Int
+  item: Item
+}
+
+type CharacterMaterial {
+  book: [Item]
+  boss: [Item]
+  material: [Item]
+}
+
 type Daily {
-  artifacts: [Artifact]
+  characters: [Character]
   date: DateTime
   day: String
-  domainCategories: [DomainCategory]
   image: String
+  materials: [ItemGroup]
 }
 
 """
@@ -43,6 +71,27 @@ type DomainCategory {
   name: String
 }
 
+type Elemental {
+  id: String
+  name: String
+  simpleName: String
+}
+
+type Item {
+  day: [String]
+  id: ID
+  name: String
+  parent: String
+  rarity: Int
+}
+
+type ItemGroup {
+  day: String
+  items: [Item]
+  name: String
+  type: String
+}
+
 type Monster {
   count: Int
   id: ID
@@ -51,14 +100,26 @@ type Monster {
 
 type Query {
   getAllArtifacts: [Artifact]
+  getAllCharacters: [Character]
   getAllDomainCategory: [DomainCategory]
+  getAllItemDomains: [Item]
+  getAllItems: [Item]
   getArtifact(name: String): Artifact
+  getCharacter(name: String): Character
   getDaily: Daily
   getDomainCategory(name: String): DomainCategory
+  getItem(name: String): Item
+  getItemDomain(day: String, name: String): [Item]
 }
 
 type Reward {
   adventureExp: String
   friendshipExp: String
   mora: String
+}
+
+type Stats {
+  atk: Int
+  def: Int
+  hp: Int
 }

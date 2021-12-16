@@ -6,19 +6,28 @@ import { buildSchema } from "type-graphql";
 import initImageGenerator from "./plugins/image-generator";
 import { testBrowser } from "./plugins/image-generator/utils/browser";
 import Database from "./database";
+import { BaseRedisCache } from "apollo-server-cache-redis";
+const Redis = require("ioredis");
 
-import { DomainResolver } from "./resolvers/domainResolver";
-import { ArtifactResolver } from "./resolvers/artifactResolver";
-import { DailyResolver } from "./resolvers/dailyResolver";
 import {
-    ApolloServerPluginLandingPageGraphQLPlayground,
-    ApolloServerPluginLandingPageDisabled,
-} from "apollo-server-core";
+    DomainResolver,
+    ArtifactResolver,
+    DailyResolver,
+    ItemResolver,
+    CharacterResolver,
+} from "./resolvers";
+import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import cors from "cors";
 
 async function main() {
     const schema = await buildSchema({
-        resolvers: [DomainResolver, ArtifactResolver, DailyResolver],
+        resolvers: [
+            DomainResolver,
+            ArtifactResolver,
+            DailyResolver,
+            ItemResolver,
+            CharacterResolver,
+        ],
         emitSchemaFile: true,
         nullableByDefault: true,
     });
@@ -28,6 +37,11 @@ async function main() {
     const server = new ApolloServer({
         schema,
         introspection: true,
+        // cache: new BaseRedisCache({
+        //     client: new Redis({
+        //         host: "redis-server",
+        //     }),
+        // }),
         plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     });
 

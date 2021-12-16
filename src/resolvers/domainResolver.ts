@@ -1,6 +1,7 @@
 import { Arg, createUnionType, Query, Resolver } from "type-graphql";
 import { DOMAINS } from "../data/domains";
 import { DomainCategory } from "../schemas/domain";
+import { getter, getterAll } from "../utils/accessors";
 
 const GetDomainCategoryUnion = createUnionType({
     name: "GetDomainCategory",
@@ -13,23 +14,14 @@ export class DomainResolver {
 
     @Query((returns) => [DomainCategory])
     async getAllDomainCategory(): Promise<DomainCategory[]> {
-        if (this.domainCollection.length === 0) {
-            await Object.keys(DOMAINS).map((key) => {
-                this.domainCollection.push(DOMAINS[key]);
-            });
-        }
+        this.domainCollection = await getterAll<DomainCategory>(DOMAINS);
         return this.domainCollection;
     }
 
     @Query((returns) => DomainCategory)
     async getDomainCategory(
         @Arg("name") name: string,
-    ): Promise<DomainCategory | string> {
-        for (const key of Object.keys(DOMAINS)) {
-            if (DOMAINS[key].name === name) {
-                return DOMAINS[key];
-            }
-        }
-        return "Does not exist!";
+    ): Promise<DomainCategory | null> {
+        return getter<DomainCategory>(name, DOMAINS);
     }
 }
