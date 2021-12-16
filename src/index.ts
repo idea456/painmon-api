@@ -15,6 +15,7 @@ import {
     DailyResolver,
     ItemResolver,
     CharacterResolver,
+    WeaponResolver,
 } from "./resolvers";
 import { ApolloServerPluginLandingPageGraphQLPlayground } from "apollo-server-core";
 import cors from "cors";
@@ -27,6 +28,7 @@ async function main() {
             DailyResolver,
             ItemResolver,
             CharacterResolver,
+            WeaponResolver,
         ],
         emitSchemaFile: true,
         nullableByDefault: true,

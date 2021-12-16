@@ -47,6 +47,7 @@ type Daily {
   day: String
   image: String
   materials: [ItemGroup]
+  weapons: [Weapon]
 }
 
 """
@@ -104,12 +105,14 @@ type Query {
   getAllDomainCategory: [DomainCategory]
   getAllItemDomains: [Item]
   getAllItems: [Item]
+  getAllWeapons: [Weapon]
   getArtifact(name: String): Artifact
   getCharacter(name: String): Character
   getDaily: Daily
   getDomainCategory(name: String): DomainCategory
   getItem(name: String): Item
   getItemDomain(day: String, name: String): [Item]
+  getWeapon(name: String): Weapon
 }
 
 type Reward {
@@ -122,4 +125,25 @@ type Stats {
   atk: Int
   def: Int
   hp: Int
+}
+
+type Weapon {
+  ascension: [WeaponAscension]
+  atk: Int
+  id: ID
+  name: String
+  rarity: Int
+  secondary: String
+  source: String
+  type: WeaponType
+}
+
+type WeaponAscension {
+  items: [Item]
+  mora: Int
+}
+
+type WeaponType {
+  id: ID
+  name: String
 }

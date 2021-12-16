@@ -33,6 +33,11 @@ export default defineComponent({
     name: "DailyCard",
     template,
     setup() {
+        const queryString = window.location.search;
+        const encodedUri = encodeURI(queryString);
+        // const urlParams = new URLSearchParams(queryString);
+        // const farmableMaterials = JSON.parse(urlParams.get("items"));
+        console.log("decode: ", encodedUri);
         const day = "Tuesday";
         return {
             day,

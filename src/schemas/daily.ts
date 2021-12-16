@@ -1,6 +1,7 @@
 import { Field, ObjectType, Int } from "type-graphql";
 import { Character } from "./character";
 import { Item, ItemGroup } from "./item";
+import { Weapon } from "./weapon";
 
 // @ObjectType()
 // export class Daily {
@@ -27,6 +28,8 @@ export class Daily {
     // weapons: Weapon[];
     @Field((type) => [Character])
     characters: Character[];
+    @Field((type) => [Weapon])
+    weapons: Weapon[];
     @Field()
     image: string;
 }
