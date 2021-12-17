@@ -4,6 +4,7 @@ export const ITEM_GROUP = {
     teachings_of_freedom: {
         name: "Freedom",
         day: ["monday", "thursday"],
+        domain: "Forsaken Rift",
         items: [
             itemList.teachings_of_freedom,
             itemList.guide_to_freedom,
@@ -14,6 +15,7 @@ export const ITEM_GROUP = {
     teachings_of_ballad: {
         name: "Ballad",
         day: ["wednesday", "saturday"],
+        domain: "Forsaken Rift",
         items: [
             itemList.teachings_of_ballad,
             itemList.guide_to_ballad,
@@ -24,6 +26,7 @@ export const ITEM_GROUP = {
     teachings_of_gold: {
         name: "Gold",
         day: ["wednesday", "saturday"],
+        domain: "Taishan Mansion",
         items: [
             itemList.teachings_of_gold,
             itemList.guide_to_gold,
@@ -34,6 +37,7 @@ export const ITEM_GROUP = {
     teachings_of_resistance: {
         name: "Resistance",
         day: ["tuesday", "friday"],
+        domain: "Forsaken Rift",
         items: [
             itemList.teachings_of_resistance,
             itemList.guide_to_resistance,
@@ -44,6 +48,7 @@ export const ITEM_GROUP = {
     teachings_of_diligence: {
         name: "Diligence",
         day: ["tuesday", "friday"],
+        domain: "Taishan Mansion",
         items: [
             itemList.teachings_of_diligence,
             itemList.guide_to_diligence,
@@ -54,6 +59,7 @@ export const ITEM_GROUP = {
     teachings_of_prosperity: {
         name: "Prosperity",
         day: ["monday", "thursday"],
+        domain: "Taishan Mansion",
         items: [
             itemList.teachings_of_prosperity,
             itemList.guide_to_prosperity,
@@ -64,6 +70,7 @@ export const ITEM_GROUP = {
     teachings_of_transience: {
         name: "Transience",
         day: ["monday", "thursday"],
+        domain: "Violet Court",
         items: [
             itemList.teachings_of_transience,
             itemList.guide_to_transience,
@@ -74,6 +81,7 @@ export const ITEM_GROUP = {
     teachings_of_elegance: {
         name: "Elegance",
         day: ["tuesday", "friday"],
+        domain: "Violet Court",
         items: [
             itemList.teachings_of_elegance,
             itemList.guide_to_elegance,
@@ -84,6 +92,7 @@ export const ITEM_GROUP = {
     teachings_of_light: {
         name: "Light",
         day: ["wednesday", "saturday"],
+        domain: "Violet Court",
         items: [
             itemList.teachings_of_light,
             itemList.guide_to_light,
@@ -94,6 +103,7 @@ export const ITEM_GROUP = {
     tile_of_decarabians_tower: {
         name: "Decarabian",
         day: ["monday", "thursday"],
+        domain: "Cecilia Garden",
         items: [
             itemList.tile_of_decarabians_tower,
             itemList.debris_of_decarabians_city,
@@ -105,6 +115,7 @@ export const ITEM_GROUP = {
     luminous_sands_from_guyun: {
         name: "Guyun",
         day: ["monday", "thursday"],
+        domain: "Hidden Palace of Lianshan Formula",
         items: [
             itemList.luminous_sands_from_guyun,
             itemList.lustrous_stone_from_guyun,
@@ -116,6 +127,7 @@ export const ITEM_GROUP = {
     boreal_wolfs_milk_tooth: {
         name: "Boreal Wolf",
         day: ["tuesday", "friday"],
+        domain: "Cecilia Garden",
         items: [
             itemList.boreal_wolfs_milk_tooth,
             itemList.boreal_wolfs_cracked_tooth,
@@ -127,6 +139,7 @@ export const ITEM_GROUP = {
     mist_veiled_lead_elixir: {
         name: "Mist Veiled Elixir",
         day: ["tuesday", "friday"],
+        domain: "Hidden Palace of Lianshan Formula",
         items: [
             itemList.mist_veiled_lead_elixir,
             itemList.mist_veiled_mercury_elixir,
@@ -138,6 +151,7 @@ export const ITEM_GROUP = {
     fetters_of_the_dandelion_gladiator: {
         name: "Dandelion Gladiator",
         day: ["wednesday", "saturday"],
+        domain: "Cecilia Garden",
         items: [
             itemList.fetters_of_the_dandelion_gladiator,
             itemList.chains_of_the_dandelion_gladiator,
@@ -149,6 +163,7 @@ export const ITEM_GROUP = {
     grain_of_aerosiderite: {
         name: "Aerosiderite",
         day: ["wednesday", "saturday"],
+        domain: "Hidden Palace of Lianshan Formula",
         items: [
             itemList.grain_of_aerosiderite,
             itemList.piece_of_aerosiderite,
@@ -160,6 +175,7 @@ export const ITEM_GROUP = {
     coral_branch_of_a_distant_sea: {
         name: "Distant Sea",
         day: ["monday", "thursday"],
+        domain: "Court of Flowing Sand",
         items: [
             itemList.coral_branch_of_a_distant_sea,
             itemList.jeweled_branch_of_a_distant_sea,
@@ -171,6 +187,7 @@ export const ITEM_GROUP = {
     narukamis_wisdom: {
         name: "Narukami",
         day: ["tuesday", "friday"],
+        domain: "Court of Flowing Sand",
         items: [
             itemList.narukamis_wisdom,
             itemList.narukamis_joy,
@@ -182,6 +199,7 @@ export const ITEM_GROUP = {
     mask_of_the_wicked_lieutenant: {
         name: "Mask",
         day: ["wednesday", "saturday"],
+        domain: "Court of Flowing Sand",
         items: [
             itemList.mask_of_the_wicked_lieutenant,
             itemList.mask_of_the_tigers_bite,

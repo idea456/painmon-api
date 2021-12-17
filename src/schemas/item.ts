@@ -20,6 +20,8 @@ export class ItemGroup {
     name: string;
     @Field({ nullable: true })
     day?: string;
+    @Field({ nullable: true })
+    domain?: string;
     @Field((type) => [Item])
     items: Item[];
     @Field()
