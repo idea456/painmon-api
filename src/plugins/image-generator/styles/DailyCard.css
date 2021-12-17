@@ -1,18 +1,22 @@
 .main-container {
-    background-color: antiquewhite;
+    background-color: #202442;
     text-align: center;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     padding: 20px;
     border-radius: 50px;
 }
 
 .daily-title {
     font-size: 35px;
+    font-weight: 200;
+    color: white;
     font-family: "Genshin";
 }
 
 .daily-subtitle {
     font-size: 25px;
+    color: white;
+    font-weight: 200;
     font-family: "Genshin";
 }
 

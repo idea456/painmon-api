@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import base64 from "base-64";
+import { Base64 } from "js-base64";
 
 let browser: puppeteer.Browser;
 
@@ -28,8 +28,18 @@ export async function generateScreenshot(
     items: Object,
 ): Promise<string> {
     const page: puppeteer.Page = await browser.newPage();
-    // await page.goto(url + base64.encode(utf8.encode(JSON.stringify(items)))); // pass information by url
-    // console.log("items: ", btoa(JSON.stringify(items)));
+    const test = {
+        a: "123",
+        b: 123,
+        c: {
+            name: 123,
+        },
+        d: ["123"],
+        e: [{ a: 123 }, { b: 1233 }],
+    };
+    const encoded = Base64.btoa(JSON.stringify(test));
+    await page.goto(url + `?items=${encoded}`); // pass information by url
+    console.log("items: ", url + `?items=${encoded}`);
     await page.goto(url);
     const htmlElement = await page.$("#app");
     const result = <string>await htmlElement?.screenshot({
