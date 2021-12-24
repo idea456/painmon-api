@@ -18,9 +18,22 @@ export async function testBrowser(url: string): Promise<void> {
         type: "jpeg",
         quality: 100,
         path: "test.jpg",
-        fullPage: true,
     });
     await page.close();
+}
+
+async function getHeight(page: puppeteer.Page): Promise<number> {
+    const height = await page.evaluate((_) => {
+        return Math.max(document.body.scrollHeight, document.body.clientHeight);
+    });
+    return height;
+}
+
+async function getWidth(page: puppeteer.Page): Promise<number> {
+    const width = await page.evaluate((_) => {
+        return Math.max(document.body.clientWidth, document.body.scrollWidth);
+    });
+    return width;
 }
 
 export async function generateScreenshot(
@@ -28,18 +41,31 @@ export async function generateScreenshot(
     items: Object,
 ): Promise<string> {
     const page: puppeteer.Page = await browser.newPage();
+
+    const pageWidth = 1440;
+    const viewportHeight = 800;
+    await page.setViewport({
+        width: pageWidth,
+        height: viewportHeight,
+    });
     const encoded = Base64.btoa(JSON.stringify(items));
     await page.goto(url + `?items=${encoded}`); // pass information by url
     console.log("items: ", url + `?items=${encoded}`);
     await page.goto(url + `?items=${encoded}`);
     const htmlElement = await page.$("#app");
+
     const result = <string>await htmlElement?.screenshot({
-        type: "png",
+        type: "jpeg",
         encoding: "base64",
+        clip: {
+            x: 0,
+            y: 0,
+            width: await getWidth(page),
+            height: await getHeight(page),
+        },
     });
     const base64: string = "base64://" + result; // convert image to base64 to pass to graphQL query
 
     await page.close();
-    console.log("returned: ", base64);
     return base64;
 }
