@@ -5,8 +5,8 @@ const template = `
             <h3 class="item-text">{{parseItem(item)}}</h3>
         </div>
         <div class="character-container">
-            <img v-for="character in characters" class="character" :src="'/static/characters/' + character + '.png'" :alt="character"/>
-        </div>
+            <img v-for="character in characters" :class="['character', character.element]" :src="'/static/characters/' + character.name + '.png'" :alt="character.name"/>
+            </div>
     </div>
 `;
 
@@ -29,7 +29,8 @@ export default defineComponent({
                     break;
                 }
             }
-            return itemName.split("").reverse().join("");
+            itemName = itemName.split("").reverse().join("");
+            return itemName.charAt(0).toUpperCase() + itemName.slice(1);
         },
     },
 });

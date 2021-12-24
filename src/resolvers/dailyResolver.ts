@@ -47,11 +47,24 @@ export class DailyResolver {
                 if (item.day.includes(day.toLowerCase())) {
                     check = true;
                     if (item.parent) {
+                        // item already added in the items
                         if (!(item.parent in items)) {
-                            items[item.parent] = [char.id];
+                            items[item.parent] = [
+                                {
+                                    name: char.id,
+                                    element: char.element.id,
+                                },
+                            ];
                         } else {
-                            if (!items[item.parent].includes(char.id)) {
-                                items[item.parent].push(char.id);
+                            if (
+                                items[item.parent].filter(
+                                    (c) => c.name === char.id,
+                                ).length === 0
+                            ) {
+                                items[item.parent].push({
+                                    name: char.id,
+                                    element: char.element.id,
+                                });
                             }
                         }
                     }
@@ -86,6 +99,8 @@ export class DailyResolver {
             WEAPONS,
             weaponsTodayComparator,
         );
+        console.log("daily items: ", items);
+
         return {
             date: today,
             day,
