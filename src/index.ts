@@ -56,7 +56,6 @@ async function main() {
     server.applyMiddleware({ app });
 
     await initImageGenerator();
-    await testBrowser("http://localhost:8000/views/daily.html");
 
     // db.setString("test", "123");
     // const test = await db.getString("test");

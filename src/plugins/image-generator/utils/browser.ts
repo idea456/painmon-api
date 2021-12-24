@@ -28,21 +28,13 @@ export async function generateScreenshot(
     items: Object,
 ): Promise<string> {
     const page: puppeteer.Page = await browser.newPage();
-    const test = {
-        a: "123",
-        b: 123,
-        c: {
-            name: 123,
-        },
-        d: ["123"],
-        e: [{ a: 123 }, { b: 1233 }],
-    };
-    const encoded = Base64.btoa(JSON.stringify(test));
+    const encoded = Base64.btoa(JSON.stringify(items));
     await page.goto(url + `?items=${encoded}`); // pass information by url
     console.log("items: ", url + `?items=${encoded}`);
     await page.goto(url);
     const htmlElement = await page.$("#app");
     const result = <string>await htmlElement?.screenshot({
+        type: "png",
         encoding: "base64",
     });
     const base64: string = "base64://" + result; // convert image to base64 to pass to graphQL query

@@ -1,24 +1,25 @@
 const template = `
 <div class="main-container">
-    <h1 class="daily-title">Today's farm guide</h1>
-    <div class="daily-container">
-        <h3 class="daily-subtitle">Characters</h3>
-        <div class="character-container">
-            <img v-for="(character, key) in 8" class="character" src="/static/ayaka_face.png" alt="Ayaya!"/>
-        </div>
-        <h3 class="daily-subtitle">Materials</h3>
-        <div class="materials-container">
-            <img v-for="(character, key) in 8" class="character" src="/static/ayaka_face.png" alt="Ayaya!" />
-        </div>
+    <div class="daily-wrapper">
+        <h1 class="daily-title">Today's farm guide</h1>
+        <Daily v-for="item in Object.keys(farmableMaterials)" :characters=farmableMaterials[item] :item="item">
     </div>
+    <img class="star star-top-left" :src="'/static/star.png'" alt=""/>
+    <img class="star star-top-right" :src="'/static/star.png'" alt=""/>
+    <img class="star star-bottom-left" :src="'/static/star.png'" alt=""/>
+    <img class="star star-bottom-right" :src="'/static/star.png'" alt=""/>
 </div>
 `;
 
+import Daily from "./daily.js";
 const { defineComponent } = Vue;
 
 export default defineComponent({
     name: "DailyCard",
     template,
+    components: {
+        Daily,
+    },
     setup() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -26,9 +27,8 @@ export default defineComponent({
             Base64.decode(urlParams.get("items").slice(7)),
         );
         console.log("decoded: ", farmableMaterials);
-        const day = "Tuesday";
         return {
-            day,
+            farmableMaterials,
         };
     },
 });

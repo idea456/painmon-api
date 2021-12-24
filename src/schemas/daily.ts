@@ -3,20 +3,6 @@ import { Character } from "./character";
 import { Item, ItemGroup } from "./item";
 import { Weapon } from "./weapon";
 
-// @ObjectType()
-// export class Daily {
-//     @Field((type) => Date)
-//     date: Date;
-//     @Field()
-//     day: string;
-//     @Field((type) => [DomainCategory])
-//     domainCategories: DomainCategory[];
-//     @Field((type) => [Artifact])
-//     artifacts: Artifact[];
-//     @Field()
-//     image: string;
-// }
-
 @ObjectType()
 export class Daily {
     @Field((type) => Date)

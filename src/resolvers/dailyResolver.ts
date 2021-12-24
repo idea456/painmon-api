@@ -19,6 +19,7 @@ export class DailyResolver {
         // dummy data for now
 
         const today = new Date(Date.now());
+        const items = {};
         const days = [
             "Sunday",
             "Monday",
@@ -30,6 +31,7 @@ export class DailyResolver {
         ];
         const day = days[today.getDay()];
         let materials: Array<ItemGroup>;
+        // make sure to test this
         if (day === "Sunday") {
             materials = await getterAll<ItemGroup>(ITEM_GROUP);
         } else {
@@ -44,15 +46,29 @@ export class DailyResolver {
             char.material["book"].map((item) => {
                 if (item.day.includes(day.toLowerCase())) {
                     check = true;
-                    return;
+                    if (item.parent) {
+                        if (!(item.parent in items)) {
+                            items[item.parent] = [char.id];
+                        } else {
+                            if (!items[item.parent].includes(char.id)) {
+                                items[item.parent].push(char.id);
+                            }
+                        }
+                    }
                 }
+                // } else if (day === 'Sunday') {
+                //     break
+                // }
             });
             return check;
         };
+
         let characters: Array<Character> = await compare(
             CHARACTERS,
             characterTodayComparator,
         );
+
+        console.log("itemss : ", items);
 
         const weaponsTodayComparator = (weapon) => {
             let check = false;
@@ -80,7 +96,7 @@ export class DailyResolver {
             weapons,
             image: await generateScreenshot(
                 "http://localhost:8000/views/daily.html?items=",
-                this.farmableMaterials,
+                items,
             ),
         };
     }
