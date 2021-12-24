@@ -68,8 +68,6 @@ export class DailyResolver {
             characterTodayComparator,
         );
 
-        console.log("itemss : ", items);
-
         const weaponsTodayComparator = (weapon) => {
             let check = false;
             weapon["ascension"].map((w) => {

@@ -31,7 +31,7 @@ export async function generateScreenshot(
     const encoded = Base64.btoa(JSON.stringify(items));
     await page.goto(url + `?items=${encoded}`); // pass information by url
     console.log("items: ", url + `?items=${encoded}`);
-    await page.goto(url);
+    await page.goto(url + `?items=${encoded}`);
     const htmlElement = await page.$("#app");
     const result = <string>await htmlElement?.screenshot({
         type: "png",
@@ -40,6 +40,6 @@ export async function generateScreenshot(
     const base64: string = "base64://" + result; // convert image to base64 to pass to graphQL query
 
     await page.close();
-
+    console.log("returned: ", base64);
     return base64;
 }

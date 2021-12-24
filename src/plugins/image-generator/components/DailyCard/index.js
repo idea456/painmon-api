@@ -26,7 +26,6 @@ export default defineComponent({
         const farmableMaterials = JSON.parse(
             Base64.decode(urlParams.get("items").slice(7)),
         );
-        console.log("decoded: ", farmableMaterials);
         return {
             farmableMaterials,
         };
