@@ -8,7 +8,7 @@ const template = `
         </div>
         <Daily v-for="item in Object.keys(farmableMaterials)" :characters="farmableMaterials[item]" :item="item" />
         <div class="daily-footer">
-            <h1 class="daily-footer-text">PAINMON-BOT</h1>
+            <h1 class="daily-footer-text">made with PAINMON-API</h1>
         </div>
     </div>
     <img class="star star-top-left" :src="'/static/star.png'" alt=""/>
