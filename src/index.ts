@@ -47,10 +47,10 @@ async function main() {
         plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
     });
 
-    // const db = new Database({
-    //     port: 6379,
-    //     host: process.env.docker === "yes" ? "redis" : "localhost",
-    // });
+    const db = new Database({
+        port: 6379,
+        host: process.env.docker === "yes" ? "redis" : "localhost",
+    });
 
     await server.start();
     server.applyMiddleware({ app });

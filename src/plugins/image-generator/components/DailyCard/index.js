@@ -31,8 +31,9 @@ export default defineComponent({
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const farmableMaterials = JSON.parse(
-            Base64.decode(urlParams.get("items").slice(7)),
+            Base64.decode(urlParams.get("items")),
         );
+        console.log("farmableMaterials: ", farmableMaterials);
         return {
             farmableMaterials,
         };

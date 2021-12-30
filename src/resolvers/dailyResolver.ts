@@ -8,6 +8,23 @@ import { Character } from "../schemas/character";
 import { CHARACTERS } from "../data/characters";
 import { Weapon } from "../schemas/weapon";
 import { WEAPONS } from "../data/weapons";
+import Database from "../database";
+
+function getResetDuration(): number {
+    const currentDate = new Date();
+    const resetDate = new Date();
+
+    let currentHour =
+        currentDate.getHours() === 0 ? 24 : currentDate.getHours();
+
+    if (currentHour > 4 && currentHour <= 24) {
+        resetDate.setHours(4);
+        resetDate.setDate(resetDate.getDate() + 1);
+    } else {
+        resetDate.setHours(4);
+    }
+    return (resetDate.getTime() - currentDate.getTime()) / 1000;
+}
 
 @Resolver(Daily)
 export class DailyResolver {
@@ -69,9 +86,6 @@ export class DailyResolver {
                         }
                     }
                 }
-                // } else if (day === 'Sunday') {
-                //     break
-                // }
             });
             return check;
         };
@@ -99,7 +113,15 @@ export class DailyResolver {
             WEAPONS,
             weaponsTodayComparator,
         );
-        console.log("daily items: ", items);
+        const cache = new Database();
+        let image: string | null = await cache.getString("dailyImage");
+        if (image === null) {
+            image = await generateScreenshot(
+                "http://localhost:8000/views/daily.html",
+                items,
+            );
+            await cache.setString("dailyImage", image, getResetDuration());
+        }
 
         return {
             date: today,
@@ -107,10 +129,7 @@ export class DailyResolver {
             materials,
             characters,
             weapons,
-            image: await generateScreenshot(
-                "http://localhost:8000/views/daily.html?items=",
-                items,
-            ),
+            image,
         };
     }
 }
