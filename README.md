@@ -3,17 +3,17 @@
 # TODO
 
 -   [ ] GraphQL API
-    -   [ ] Queries
-        -   [ ] Domain
-        -   [ ] Artifact
+    -   [x] Queries
+        -   [x] Domain
+        -   [x] Artifact
         -   [ ] Bosses
-        -   [ ] Weapons
-        -   [ ] Characters
+        -   [x] Weapons
+        -   [x] Characters
     -   [ ] Mutations for adding new data for each patch (apply to bot functions as well) to database
--   [ ] Redis Database
--   [ ] Daily generator
+-   [x] Redis Database
+-   [x] Daily generator
 -   [ ] Documentation
 -   [ ] Optimization
     -   [ ] Rate limit
-    -   [ ] Caching
+    -   [x] Caching
     -   [ ] Authentication
