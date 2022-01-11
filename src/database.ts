@@ -17,7 +17,7 @@ export default class Database {
                 // Required by node-redis V4 to connect first
                 Database.client.connect();
 
-                Database.client.del("painmon:daily:image");
+                Database.client.del("dailyImage");
 
                 Database.client.on("connect", async () => {
                     console.log("Redis initialized!");
@@ -86,3 +86,4 @@ export default class Database {
     //         });
     //     }
 }
+

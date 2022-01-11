@@ -120,7 +120,7 @@ export class DailyResolver {
                 "http://localhost:8000/views/daily.html",
                 items,
             );
-            await cache.setString("dailyImage", image, getResetDuration());
+            cache.setString("dailyImage", image, getResetDuration());
         }
 
         return {

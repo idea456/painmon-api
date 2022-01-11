@@ -1,7 +1,17 @@
 services:
     redis-server:
         image: "redis"
+        expose:
+            - "6379"
+        ports:
+            - "6379:6379"
     painmon-api:
-        build: .
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: base
+        expose: 
+            - "4000"
         ports:
             - "4000:4000"
+        command: npm start

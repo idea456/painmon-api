@@ -6,7 +6,7 @@ const template = `
         </div>
         <div class="character-container">
             <img v-for="character in characters" :class="['character', character.element]" :src="'/static/characters/' + character.name + '.png'" :alt="character.name"/>
-            </div>
+        </div>
     </div>
 `;
 
