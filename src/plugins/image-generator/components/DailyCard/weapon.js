@@ -17,6 +17,7 @@ export default defineComponent({
     template,
     props: {
         weaponName: String,
+        item: String
     },
     methods: {
         parseItem: function (name) {

@@ -77,10 +77,24 @@
     display: relative;
 }
 
+.weapon {
+    display: flex;
+    width: 80%;
+    height: auto;
+    /* margin-bottom: 30px; */
+    border: none;
+    border-radius: 20px;
+}
+
+.weapon-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .weapon-container {
     display: grid;
-    grid-template-columns: repeat(8, 300px);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(8, 160px);
+    grid-template-rows: repeat(8, 160px);
     align-items: center;
     justify-items: center;
     z-index: 9999;
@@ -204,4 +218,15 @@
 .star-bottom-right {
     bottom: 0;
     right: 0;
+}
+
+
+.five-star {
+    background: rgb(223,133,47);
+    background: linear-gradient(300deg, rgba(223,133,47,1) 0%, rgba(168,126,86,1) 100%);
+}
+
+.four-star {
+    background: rgb(139,101,205);
+    background: linear-gradient(300deg, rgba(139,101,205,1) 0%, rgba(104,99,126,1) 100%);
 }

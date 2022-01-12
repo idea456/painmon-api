@@ -101,6 +101,12 @@ export class DailyResolver {
         );
         console.log("daily items: ", items);
 
+        items["weapons"] = weapons.map(w => {
+            return {
+                id: w.id, rarity: w.rarity
+            }
+        });
+
         return {
             date: today,
             day,

@@ -42,6 +42,7 @@ export async function generateScreenshot(
 ): Promise<string> {
     const page: puppeteer.Page = await browser.newPage();
 
+
     const pageWidth = 1440;
     const viewportHeight = 800;
     await page.setViewport({

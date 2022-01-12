@@ -7,6 +7,16 @@ const template = `
             <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />
         </div>
         <Daily v-for="item in Object.keys(farmableMaterials)" :characters="farmableMaterials[item]" :item="item" />
+        <div class="daily-header">
+            <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
+            <h1 class="daily-title">Weapons</h1>
+            <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
+        </div>
+        <div class="weapon-wrapper">
+            <div class="weapon-container">
+                <img v-for="weapon in weapons" :class="['weapon', weapon.rarity === 5 ? 'five-star' : 'four-star']" :src="'/static/weapons/' + weapon.id + '.png'" :alt="weapon.id"/>
+            </div>
+        </div>
         <div class="daily-footer">
             <h1 class="daily-footer-text">made with PAINMON-API</h1>
         </div>
@@ -33,8 +43,11 @@ export default defineComponent({
         const farmableMaterials = JSON.parse(
             Base64.decode(urlParams.get("items").slice(7)),
         );
+        const weapons = farmableMaterials["weapons"]
+        delete farmableMaterials["weapons"]
         return {
             farmableMaterials,
+            weapons
         };
     },
 });
