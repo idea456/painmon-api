@@ -1,17 +1,24 @@
 services:
-    redis-server:
+    redis:
         image: "redis"
         expose:
             - "6379"
         ports:
             - "6379:6379"
     painmon-api:
-        build:
-            context: .
-            dockerfile: Dockerfile
-            target: base
+        build: .
+        environment:
+          - NODE_ENV=production
+          - PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
+        working_dir: /home/node/app
+        volumes:
+            -  ./:/home/node/app
         expose: 
             - "4000"
+            - "8000"
         ports:
             - "4000:4000"
+            - "8000:8000"
+        depends_on:
+          - redis
         command: npm start

@@ -13,7 +13,9 @@ export default class Database {
 
             // initialize redis
             if (Database.client === null) {
-                Database.client = createClient();
+                Database.client = createClient({
+                    url: `redis://redis:6379`,
+                });
                 // Required by node-redis V4 to connect first
                 Database.client.connect();
 

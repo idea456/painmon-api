@@ -18,7 +18,7 @@ export default async function initImageGenerator() {
     app.use("/styles", express.static(__dirname + "/styles"));
     app.use(express.static(__dirname + "/public"));
 
-    app.listen(8000, () => {
+    app.listen(8000, "painmon-api", () => {
         console.log(
             "Image generator browser initialized at http://localhost:8000",
         );

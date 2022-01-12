@@ -6,7 +6,9 @@ let browser: puppeteer.Browser;
 export async function initializeBrowser(): Promise<void> {
     browser = await puppeteer.launch({
         headless: true,
-        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        executablePath: 'google-chrome-stable',
+        // executablePath: '/usr/bin/chromium-browser',
+        args: ["--no-sandbox", "--disable-setuid-sandbox", '--disable-dev-shm-usage'],
     });
 }
 
@@ -40,7 +42,9 @@ export async function generateScreenshot(
     url: string,
     items: Object,
 ): Promise<string> {
+    console.log('before')
     const page: puppeteer.Page = await browser.newPage();
+    console.log('passed')
 
     const pageWidth = 1440;
     const viewportHeight = 800;

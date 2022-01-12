@@ -30,10 +30,15 @@ export default defineComponent({
     setup() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const farmableMaterials = JSON.parse(
-            Base64.decode(urlParams.get("items")),
-        );
-        console.log("farmableMaterials: ", farmableMaterials);
+        let farmableMaterials;
+        window.addEventListener('load', () => {
+            console.log('loaded wtf')
+            farmableMaterials = JSON.parse(
+                Base64.decode(urlParams.get("items")),
+            );
+            console.log("farmableMaterials: ", farmableMaterials);
+        })
+        // console.log("farmableMaterials: ", farmableMaterials);
         return {
             farmableMaterials,
         };

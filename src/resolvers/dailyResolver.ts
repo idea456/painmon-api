@@ -115,6 +115,7 @@ export class DailyResolver {
         );
         const cache = new Database();
         let image: string | null = await cache.getString("dailyImage");
+        console.log(image)
         if (image === null) {
             image = await generateScreenshot(
                 "http://localhost:8000/views/daily.html",
@@ -129,7 +130,7 @@ export class DailyResolver {
             materials,
             characters,
             weapons,
-            image,
+            image: 'asd',
         };
     }
 }
