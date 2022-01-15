@@ -5,19 +5,19 @@ const template = `
             <h3 class="item-text">{{parseItem(item)}}</h3>
         </div>
         <div class="weapon-container">
-            <img v-for="weapon in weapons" :class="['weapon', weapon.rarity === 5 ? 'five-star' : 'four-star']" :src="'/static/weapons/' + weapon.name + '.png'" :alt="weapon.name"/>
-            </div>
+            <img v-for="weapon in weapons" :class="['weapon', weapon.rarity === 5 ? 'five-star' : 'four-star']" :src="'/static/weapons/' + weapon.id + '.png'" :alt="weapon.id"/>
+        </div>
     </div>
 `;
 
 const { defineComponent } = Vue;
 
 export default defineComponent({
-    name: "Weapon",
+    name: "DailyWeapon",
     template,
     props: {
-        weaponName: String,
-        item: String
+        weapons: Array,
+        item: String,
     },
     methods: {
         parseItem: function (name) {

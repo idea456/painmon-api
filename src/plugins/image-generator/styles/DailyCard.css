@@ -81,7 +81,7 @@
     display: flex;
     width: 80%;
     height: auto;
-    /* margin-bottom: 30px; */
+    margin-bottom: 30px;
     border: none;
     border-radius: 20px;
 }
@@ -93,10 +93,11 @@
 
 .weapon-container {
     display: grid;
-    grid-template-columns: repeat(8, 160px);
-    grid-template-rows: repeat(8, 160px);
+    grid-template-columns: repeat(6, 170px);
+    grid-template-rows: repeat(auto, 170px);
     align-items: center;
     justify-items: center;
+    margin-left: 40px;
     z-index: 9999;
 }
 

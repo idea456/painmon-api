@@ -81,31 +81,38 @@ export class DailyResolver {
             characterTodayComparator,
         );
 
+        items["weapons"] = {}
+
         const weaponsTodayComparator = (weapon) => {
             let check = false;
-            weapon["ascension"].map((w) => {
-                w["items"].map((obj) => {
-                    if (
-                        obj.item.day &&
-                        obj.item.day.includes(day.toLowerCase())
-                    ) {
-                        check = true;
-                    }
-                });
-            });
+            let material = weapon["ascension"][0].items[0].item;
+            if (material.day.includes(day.toLowerCase())) {
+                if (!(material.id in items["weapons"])) {
+                    items["weapons"][material.id] = [{
+                        id: weapon.id,
+                        rarity: weapon.rarity,
+                    }]
+                } else {
+                    items["weapons"][material.id].push({
+                        id: weapon.id,
+                        rarity: weapon.rarity,
+                    })
+                }
+                return true;
+            }
             return check;
         };
         let weapons: Array<Weapon> = await compare(
             WEAPONS,
             weaponsTodayComparator,
         );
-        console.log("daily items: ", items);
+        console.log("daily items: ", items["weapons"]);
 
-        items["weapons"] = weapons.map(w => {
-            return {
-                id: w.id, rarity: w.rarity
-            }
-        });
+        // items["weapons"] = weapons.map(w => {
+        //     return {
+        //         id: w.id, rarity: w.rarity
+        //     }
+        // });
 
         return {
             date: today,

@@ -12,11 +12,7 @@ const template = `
             <h1 class="daily-title">Weapons</h1>
             <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
         </div>
-        <div class="weapon-wrapper">
-            <div class="weapon-container">
-                <img v-for="weapon in weapons" :class="['weapon', weapon.rarity === 5 ? 'five-star' : 'four-star']" :src="'/static/weapons/' + weapon.id + '.png'" :alt="weapon.id"/>
-            </div>
-        </div>
+        <DailyWeapon v-for="item in Object.keys(weapons)" :weapons="weapons[item]" :item="item" />
         <div class="daily-footer">
             <h1 class="daily-footer-text">made with PAINMON-API</h1>
         </div>
@@ -28,7 +24,14 @@ const template = `
 </div>
 `;
 
+{/* <div class="weapon-wrapper">
+<div class="weapon-container">
+    <img v-for="weapon in weapons" :class="['weapon', weapon.rarity === 5 ? 'five-star' : 'four-star']" :src="'/static/weapons/' + weapon.id + '.png'" :alt="weapon.id"/>
+</div>
+</div> */}
+
 import Daily from "./daily.js";
+import DailyWeapon from "./weapon.js"
 const { defineComponent } = Vue;
 
 export default defineComponent({
@@ -36,6 +39,7 @@ export default defineComponent({
     template,
     components: {
         Daily,
+        DailyWeapon
     },
     setup() {
         const queryString = window.location.search;
