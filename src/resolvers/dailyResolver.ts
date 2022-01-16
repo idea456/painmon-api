@@ -32,19 +32,16 @@ export class DailyResolver {
         const day = days[today.getDay()];
         let materials: Array<ItemGroup>;
         // make sure to test this
-        if (day === "Sunday") {
-            materials = await getterAll<ItemGroup>(ITEM_GROUP);
-        } else {
-            materials = await compare<ItemGroup>(
-                ITEM_GROUP,
-                (item) =>
-                    day && item.day && item.day.includes(day.toLowerCase()),
-            );
-        }
+        materials = await compare<ItemGroup>(
+            ITEM_GROUP,
+            (item) =>
+                day && item.day && (item.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday"),
+        );
+        
         const characterTodayComparator = (char) => {
             let check = false;
             char.material["book"].map((item) => {
-                if (item.day.includes(day.toLowerCase())) {
+                if (item.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday") {
                     check = true;
                     if (item.parent) {
                         // item already added in the items
@@ -86,7 +83,7 @@ export class DailyResolver {
         const weaponsTodayComparator = (weapon) => {
             let check = false;
             let material = weapon["ascension"][0].items[0].item;
-            if (material.day.includes(day.toLowerCase())) {
+            if (material.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday") {
                 if (!(material.id in items["weapons"])) {
                     items["weapons"][material.id] = [{
                         id: weapon.id,
