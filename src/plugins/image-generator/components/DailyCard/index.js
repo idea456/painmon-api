@@ -1,21 +1,29 @@
 const template = `
 <div class="main-container">
     <div class="daily-wrapper">
-        <div class="daily-header">
+        <div class="skeleton-wrapper" v-if="isSunday">
             <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />
-            <h1 class="daily-title">Today's farm guide</h1>
-            <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />
-        </div>
-        <Daily v-for="item in Object.keys(farmableMaterials)" :characters="farmableMaterials[item]" :item="item" />
-        <div class="daily-header">
-            <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
-            <h1 class="daily-title">Weapons</h1>
+            <h1 class="daily-title">All materials available on Sunday!</h1>
             <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
         </div>
-        <DailyWeapon v-for="item in Object.keys(weapons)" :weapons="weapons[item]" :item="item" />
-        <div class="daily-footer">
-            <h1 class="daily-footer-text">made with PAINMON-API</h1>
+        <div v-else>
+            <div class="daily-header">
+                <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />
+                <h1 class="daily-title">Today's farm guide</h1>
+                <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />
+            </div>
+            <Daily v-for="item in Object.keys(farmableMaterials)" :characters="farmableMaterials[item]" :item="item" />
+            <div class="daily-header">
+                <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
+                <h1 class="daily-title">Weapons</h1>
+                <img src="/static/mora.png" class="daily-title-icon" alt="primogem" />
+            </div>
+            <DailyWeapon v-for="item in Object.keys(weapons)" :weapons="weapons[item]" :item="item" />
+            <div class="daily-footer">
+                <h1 class="daily-footer-text">made with PAINMON-API</h1>
+            </div>
         </div>
+        
     </div>
     <img class="star star-top-left" :src="'/static/star.png'" alt=""/>
     <img class="star star-top-right" :src="'/static/star.png'" alt=""/>
@@ -51,7 +59,8 @@ export default defineComponent({
         delete farmableMaterials["weapons"]
         return {
             farmableMaterials,
-            weapons
+            weapons,
+            isSunday: new Date().getDay() === 0
         };
     },
 });

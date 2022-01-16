@@ -63,6 +63,13 @@
     padding-right: 20px;
 }
 
+.skeleton-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1000px;
+}
+
 .daily-wrapper {
     border: 3px solid #643c32;
     border-radius: 50px;
