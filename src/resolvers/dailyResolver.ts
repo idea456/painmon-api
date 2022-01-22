@@ -103,7 +103,7 @@ export class DailyResolver {
             WEAPONS,
             weaponsTodayComparator,
         );
-        console.log("daily items: ", items["weapons"]);
+        // console.log("daily items: ", items["weapons"]);
 
         // items["weapons"] = weapons.map(w => {
         //     return {
@@ -111,16 +111,40 @@ export class DailyResolver {
         //     }
         // });
 
+        var store = require('store')
+        console.log(store.get('dailyImage'))
+        let dailyImage = store.get('dailyImage')
+        // store.set('user', { name:'Marcus' })
+        if (dailyImage) {
+            let cachedDate = new Date(dailyImage.date)
+            let hourDifference = Math.abs(today.getTime() - cachedDate.getTime()) / 3600000;
+            if (hourDifference >= 24) {
+                dailyImage = {
+                    date: today,
+                    decodedImage: await generateScreenshot(
+                        "http://localhost:8000/views/daily.html?items=",
+                        items,
+                    ),
+                }
+            }
+        } else {
+            dailyImage = {
+                date: today,
+                decodedImage: await generateScreenshot(
+                    "http://localhost:8000/views/daily.html?items=",
+                    items,
+                ),
+            }
+        }
+        store.set('dailyImage',  dailyImage)
+
         return {
             date: today,
             day,
             materials,
             characters,
             weapons,
-            image: await generateScreenshot(
-                "http://localhost:8000/views/daily.html?items=",
-                items,
-            ),
+            image: dailyImage.decodedImage,
         };
     }
 }
