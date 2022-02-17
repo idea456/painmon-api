@@ -1,5 +1,5 @@
 const template = `
-<div class="main-container">
+<div id="daily" class="main-container">
     <div class="daily-wrapper">
         <div class="skeleton-wrapper" v-if="isSunday">
             <img src="/static/primogem.png" class="daily-title-icon" alt="primogem" />

@@ -1,6 +1,6 @@
 .main-container {
     background-color: #f2ece6;
-    width: 100vw;
+    width: 160vw;
     text-align: center;
     padding: 20px;
     position: relative;
@@ -12,7 +12,7 @@
     background-image: url("/static/paimon-derp.png");
     opacity: 0.1;
     display: block;
-    width: 100%;
+    width: auto;
     height: 100%;
     left: 0;
     top: 0;
@@ -80,6 +80,7 @@
 .daily-container {
     display: grid;
     grid-template-columns: 12% 88%;
+    width: 110vw;
     padding: 20px;
     display: relative;
 }
@@ -100,7 +101,7 @@
 
 .weapon-container {
     display: grid;
-    grid-template-columns: repeat(6, 170px);
+    grid-template-columns: repeat(9, 200px);
     grid-template-rows: repeat(auto, 170px);
     align-items: center;
     justify-items: center;

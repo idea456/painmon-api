@@ -30,10 +30,9 @@ async function getHeight(page: puppeteer.Page): Promise<number> {
 }
 
 async function getWidth(page: puppeteer.Page): Promise<number> {
-    const width = await page.evaluate((_) => {
-        return Math.max(document.body.clientWidth, document.body.scrollWidth);
-    });
-    return width;
+    const daily = await page.$('#daily');
+    const boundingBox = await daily.boundingBox();
+    return boundingBox.width
 }
 
 export async function generateScreenshot(
@@ -43,17 +42,16 @@ export async function generateScreenshot(
     const page: puppeteer.Page = await browser.newPage();
 
 
-    const pageWidth = 1440;
-    const viewportHeight = 800;
-    await page.setViewport({
-        width: pageWidth,
-        height: viewportHeight,
-    });
     const encoded = Base64.btoa(JSON.stringify(items));
     await page.goto(url + `?items=${encoded}`); // pass information by url
     console.log("items: ", url + `?items=${encoded}`);
     await page.goto(url + `?items=${encoded}`);
+    await page.setViewport({
+        width: await getWidth(page),
+        height: await getHeight(page),
+    });
     const htmlElement = await page.$("#app");
+    
 
     const result = <string>await htmlElement?.screenshot({
         type: "jpeg",
@@ -66,7 +64,6 @@ export async function generateScreenshot(
         },
     });
     const base64: string = "base64://" + result; // convert image to base64 to pass to graphQL query
-
     await page.close();
     return base64;
 }
