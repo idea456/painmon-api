@@ -21,6 +21,7 @@
         "ioredis": "^4.28.2",
         "js-base64": "^3.7.2",
         "log4js": "^6.3.0",
+        "newrelic": "^8.7.1",
         "node-localstorage": "^2.2.1",
         "puppeteer": "^12.0.1",
         "redis": "^4.0.0",
