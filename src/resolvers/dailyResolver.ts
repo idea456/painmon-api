@@ -117,14 +117,15 @@ export class DailyResolver {
         // store.set('user', { name:'Marcus' })
         if (dailyImage) {
             let cachedDate = new Date(dailyImage.date)
-            let hourDifference = Math.abs(today.getTime() - cachedDate.getTime()) / 3600000;
-            if (hourDifference >= 24) {
+            // let hourDifference = Math.abs(today.getTime() - cachedDate.getTime()) / 3600000;
+            // if the daily image is no longer relevant for today
+            if ((cachedDate.getDate() < today.getDate()) || (cachedDate.getDate() == today.getDate() && !(today.getHours() >= 0 && today.getHours() <= 4))) {
+                // generate new daily image for the new day
                 dailyImage = {
                     date: today,
                     decodedImage: await generateScreenshot(
                         "http://localhost:8000/views/daily.html?items=",
-                        items,
-                    ),
+                        items),
                 }
             }
         } else {
