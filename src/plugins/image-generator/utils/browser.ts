@@ -23,10 +23,11 @@ export async function testBrowser(url: string): Promise<void> {
 }
 
 async function getHeight(page: puppeteer.Page): Promise<number> {
+    const offset = 37;
     const height = await page.evaluate((_) => {
         return Math.max(document.body.scrollHeight, document.body.clientHeight);
     });
-    return height;
+    return height + offset;
 }
 
 async function getWidth(page: puppeteer.Page): Promise<number> {
@@ -63,6 +64,17 @@ export async function generateScreenshot(
             height: await getHeight(page),
         },
     });
+
+    const img = await htmlElement?.screenshot({
+        type: 'jpeg',
+        clip: {
+            x: 0,
+            y: 0,
+            width: await getWidth(page),
+            height: await getHeight(page),
+        },
+        path: 'output.jpeg'
+    })
     const base64: string = "base64://" + result; // convert image to base64 to pass to graphQL query
     await page.close();
     return base64;
