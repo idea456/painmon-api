@@ -530,6 +530,11 @@ export const ITEMS = {
         rarity: 4,
         parent: "shivada_jade_sliver",
     },
+    the_meaning_of_aeons: {
+        id: 'the_meaning_of_aeons',
+        name: 'The Meaning of Aeons',
+        rarity: 5,
+      },
     teachings_of_diligence: {
         id: "teachings_of_diligence",
         name: "Teachings of Diligence",
@@ -882,5 +887,11 @@ export const ITEMS = {
         name: "Riftborn Regalia",
         rarity: 5,
         parent: "prithiva_topaz_sliver",
+    },
+    dragonheirs_false_fin: {
+        id: 'dragonheirs_false_fin',
+        name: "Dragonheir's False Fin",
+        rarity: 5,
+        parent: 'shivada_jade_sliver',
     },
 };
