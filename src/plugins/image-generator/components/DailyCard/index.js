@@ -60,7 +60,7 @@ export default defineComponent({
         return {
             farmableMaterials,
             weapons,
-            isSunday: new Date().getDay() === 0
+            isSunday: false
         };
     },
 });
