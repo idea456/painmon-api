@@ -19,7 +19,6 @@ export class DailyResolver {
         // dummy data for now
 
         const today = new Date(Date.now());
-        today.setDate(today.getDate() + 1)
         const items = {};
         const days = [
             "Sunday",
