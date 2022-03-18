@@ -11,18 +11,15 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "apollo-server-cache-redis": "^3.3.0",
         "apollo-server-core": "^3.5.0",
         "apollo-server-express": "^3.5.0",
         "body-parser": "^1.19.1",
         "class-validator": "^0.13.2",
         "express": "^4.17.1",
         "graphql": "^15.7.2",
-        "ioredis": "^4.28.2",
         "js-base64": "^3.7.2",
-        "log4js": "^6.3.0",
-        "newrelic": "^8.7.1",
         "node-localstorage": "^2.2.1",
+        "nodemon": "^2.0.15",
         "puppeteer": "^12.0.1",
         "redis": "^4.0.0",
         "reflect-metadata": "^0.1.13",
@@ -30,8 +27,7 @@
         "ts-node": "^10.4.0",
         "type-graphql": "^1.1.1",
         "typescript": "^4.5.3",
-        "url": "^0.11.0",
-        "nodemon": "^2.0.15"
+        "url": "^0.11.0"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",

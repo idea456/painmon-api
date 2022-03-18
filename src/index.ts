@@ -1,14 +1,9 @@
-require ('newrelic');
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import bodyParser from "body-parser";
 import { buildSchema } from "type-graphql";
 import initImageGenerator from "./plugins/image-generator";
-import { testBrowser } from "./plugins/image-generator/utils/browser";
-import Database from "./database";
-import { BaseRedisCache } from "apollo-server-cache-redis";
-const Redis = require("ioredis");
 
 import {
     DomainResolver,
