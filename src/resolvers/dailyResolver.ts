@@ -9,7 +9,7 @@ import { CHARACTERS } from "../data/characters";
 import { Weapon } from "../schemas/weapon";
 import { WEAPONS } from "../data/weapons";
 
-export async function generateDailyData() : Promise<Daily> {
+export async function generateDailyData(useCache: boolean = true) : Promise<Daily> {
     const today = new Date(Date.now());
     const items = {};
     const days = [
@@ -106,7 +106,7 @@ export async function generateDailyData() : Promise<Daily> {
     var store = require('store')
     let dailyImage = store.get('dailyImage')
     // store.set('user', { name:'Marcus' })
-    if (!dailyImage) {
+    if (!useCache || !dailyImage) {
         // let cachedDate = new Date(dailyImage.date)
         // // let hourDifference = Math.abs(today.getTime() - cachedDate.getTime()) / 3600000;
         // // if the daily image is no longer relevant for today
