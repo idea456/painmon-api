@@ -20,24 +20,28 @@ export class ItemResolver {
     }
 
     @Query((returns) => [Item])
-    async getAllItemDomains(): Promise<Item[]> {
-        this.itemDomainsCollection = await compare(
+    getAllItemDomains(): Item[] {
+        this.itemDomainsCollection = compare(
             ITEMS,
             (item) => "day" in item,
-        );
+            "items",
+            false
+        )();
         return this.itemDomainsCollection;
     }
 
     @Query((returns) => [Item])
-    async getItemDomain(
+    getItemDomain(
         @Arg("name", { nullable: true }) name?: string,
         @Arg("day", { nullable: true }) day?: string,
-    ): Promise<Item[]> {
-        return await compare<Item>(
+    ): Item[] {
+        return compare<Item>(
             ITEMS,
             (item) =>
                 (item.day && item.day.includes(day.toLowerCase())) ||
                 (name && item.name === name),
-        );
+            "items",
+            false
+        )();
     }
 }

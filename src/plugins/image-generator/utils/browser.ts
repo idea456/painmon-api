@@ -45,8 +45,8 @@ export async function generateScreenshot(
 
     const encoded = Base64.btoa(JSON.stringify(items));
     await page.goto(url + `?items=${encoded}`); // pass information by url
-    console.log("items: ", url + `?items=${encoded}`);
-    await page.goto(url + `?items=${encoded}`);
+    console.log(url + `?items=${encoded}`)
+    // console.log("items: ", url + `?items=${encoded}`);
     await page.setViewport({
         width: await getWidth(page),
         height: await getHeight(page),
