@@ -430,6 +430,7 @@ export const ITEM_GROUP = {
     teachings_of_admonition: {
         name: "Admonition",
         day: ["monday", "thursday"],
+        domain: "Steeple Of Ignorance",
         items: [
             itemList.teachings_of_admonition,
             itemList.guide_to_admonition,
@@ -440,6 +441,7 @@ export const ITEM_GROUP = {
     teachings_of_ingenuity: {
         name: "Ingenuity",
         day: ["tuesday", "friday"],
+        domain: "Steeple Of Ignorance",
         items: [
             itemList.teachings_of_ingenuity,
             itemList.guide_to_ingenuity,
@@ -450,6 +452,7 @@ export const ITEM_GROUP = {
     teachings_of_praxis: {
         name: "Praxis",
         day: ["wednesday", "saturday"],
+        domain: "Steeple Of Ignorance",
         items: [
             itemList.teachings_of_praxis,
             itemList.guide_to_praxis,
@@ -468,6 +471,7 @@ export const ITEM_GROUP = {
     copper_talisman_of_the_forest_dew: {
         name: "Forest Dew",
         day: ["monday", "thursday"],
+        domain: "Tower Of Abject Pride",
         items: [
             itemList.copper_talisman_of_the_forest_dew,
             itemList.iron_talisman_of_the_forest_dew,
@@ -479,6 +483,7 @@ export const ITEM_GROUP = {
     oasis_gardens_reminiscence: {
         name: "Oasis Garden",
         day: ["tuesday", "friday"],
+        domain: "Tower Of Abject Pride",
         items: [
             itemList.oasis_gardens_reminiscence,
             itemList.oasis_gardens_kindness,
@@ -490,6 +495,7 @@ export const ITEM_GROUP = {
     echo_of_scorching_might: {
         name: "Scorching Might",
         day: ["wednesday", "saturday"],
+        domain: "Tower Of Abject Pride",
         items: [
             itemList.echo_of_scorching_might,
             itemList.remnant_glow_of_scorching_might,
