@@ -427,4 +427,39 @@ export const ITEM_GROUP = {
             itemList.spectral_nucleus,
         ],
     },
+    teachings_of_admonition: {
+        name: "Admonition",
+        items: [
+            itemList.teachings_of_admonition,
+            itemList.guide_to_admonition,
+            itemList.philosophies_of_admonition,
+        ],
+        type: "book",
+    },
+    teachings_of_ingenuity: {
+        name: "Ingenuity",
+        items: [
+            itemList.teachings_of_ingenuity,
+            itemList.guide_to_ingenuity,
+            itemList.philosophies_of_ingenuity,
+        ],
+        type: "book",
+    },
+    teachings_of_praxis: {
+        name: "Praxis",
+        items: [
+            itemList.teachings_of_praxis,
+            itemList.guide_to_praxis,
+            itemList.philosophies_of_praxis,
+        ],
+        type: "book",
+    },
+    fungal_spores: {
+        name: "Spores",
+        items: [
+            itemList.fungal_spores,
+            itemList.luminescent_pollen,
+            itemList.crystalline_cyst_dust,
+        ],
+    },
 };

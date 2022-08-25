@@ -614,4 +614,40 @@ export const ARTIFACTS = {
         rarity: [4, 5],
         domain: "slumbering_court",
     },
+    gilded_dreams: {
+        id: "gilded_dreams",
+        name: "Gilded Dreams",
+        setPiece: [2, 4],
+        sets: {
+            goblet: "Honeyed Final Feast",
+            plume: "Feather of Judgment",
+            circlet: "Shadow of the Sand King",
+            flower: "Dreaming Steelbloom",
+            sands: "The Sunken Years",
+        },
+        bonuses: [
+            "Elemental Mastery +80.",
+            "Within 8s of triggering an Elemental Reaction, the character equipping this will obtain buffs based on the Elemental Type of the other party members. ATK is increased by 14% for each party member whose Elemental Type is the same as the equipping character, and Elemental Mastery is increased by 50 for every party member with a different Elemental Type. Each of the aforementioned buffs will count up to 3 characters. This effect can be triggered once every 8s. The character who equips this can still trigger its effects when not on the field.",
+        ],
+        rarity: [4, 5],
+        domain: "spire_of_solitary_enlightenment",
+    },
+    deepwood_memories: {
+        id: "deepwood_memories",
+        name: "Deepwood Memories",
+        setPiece: [2, 4],
+        sets: {
+            goblet: "Lamp of the Lost",
+            plume: "Scholar of Vines",
+            circlet: "Laurel Coronet",
+            flower: "Labyrinth Wayfarer",
+            sands: "A Time of Insight",
+        },
+        bonuses: [
+            "Dendro DMG Bonus +15%.",
+            "After Elemental Skills or Bursts hit opponents, the targets' Dendro RES will be decreased by 30% for 8s. This effect can be triggered even if the equipping character is not on the field.",
+        ],
+        rarity: [4, 5],
+        domain: "spire_of_solitary_enlightenment",
+    },
 };

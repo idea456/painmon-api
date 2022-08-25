@@ -531,10 +531,10 @@ export const ITEMS = {
         parent: "shivada_jade_sliver",
     },
     the_meaning_of_aeons: {
-        id: 'the_meaning_of_aeons',
-        name: 'The Meaning of Aeons',
+        id: "the_meaning_of_aeons",
+        name: "The Meaning of Aeons",
         rarity: 5,
-      },
+    },
     teachings_of_diligence: {
         id: "teachings_of_diligence",
         name: "Teachings of Diligence",
@@ -889,9 +889,134 @@ export const ITEMS = {
         parent: "prithiva_topaz_sliver",
     },
     dragonheirs_false_fin: {
-        id: 'dragonheirs_false_fin',
+        id: "dragonheirs_false_fin",
         name: "Dragonheir's False Fin",
         rarity: 5,
-        parent: 'shivada_jade_sliver',
+        parent: "shivada_jade_sliver",
+    },
+    gloomy_statuette: { id: "gloomy_statuette", name: "Gloomy Statuette" },
+    dark_statuette: { id: "dark_statuette", name: "Dark Statuette" },
+    deathly_statuette: { id: "deathly_statuette", name: "Deathly Statuette" },
+    tears_of_the_calamitous_god: {
+        id: "tears_of_the_calamitous_god",
+        name: "Tears of the Calamitous God",
+    },
+
+    runic_fang: { id: "runic_fang", name: "Runic Fang", rarity: 4 },
+
+    teachings_of_admonition: {
+        id: "teachings_of_admonition",
+        name: "Teachings of Admonition",
+        day: ["monday", "thursday"],
+        rarity: 2,
+    },
+    mudra_of_the_malefic_general: {
+        id: "mudra_of_the_malefic_general",
+        name: "Mudra of the Malefic General",
+        rarity: 5,
+    },
+    guide_to_admonition: {
+        id: "guide_to_admonition",
+        name: "Guide to Admonition",
+        day: ["monday", "thursday"],
+        rarity: 3,
+        parent: "teachings_of_admonition",
+    },
+    philosophies_of_admonition: {
+        id: "philosophies_of_admonition",
+        name: "Philosophies of Admonition",
+        day: ["monday", "thursday"],
+        rarity: 4,
+        parent: "teachings_of_admonition",
+    },
+
+    teachings_of_ingenuity: {
+        id: "teachings_of_ingenuity",
+        name: "Teachings of Ingenuity",
+        day: ["tuesday", "friday"],
+        rarity: 2,
+    },
+    guide_to_ingenuity: {
+        id: "guide_to_ingenuity",
+        name: "Guide to Ingenuity",
+        day: ["tuesday", "friday"],
+        rarity: 3,
+        parent: "teachings_of_ingenuity",
+    },
+    philosophies_of_ingenuity: {
+        id: "philosophies_of_ingenuity",
+        name: "Philosophies of Ingenuity",
+        day: ["tuesday", "friday"],
+        rarity: 4,
+        parent: "teachings_of_ingenuity",
+    },
+
+    teachings_of_praxis: {
+        id: "teachings_of_praxis",
+        name: "Teachings of Praxis",
+        day: ["wednesday", "saturday"],
+        rarity: 2,
+    },
+    guide_to_praxis: {
+        id: "guide_to_praxis",
+        name: "Guide to Praxis",
+        day: ["wednesday", "saturday"],
+        rarity: 3,
+        parent: "teachings_of_praxis",
+    },
+    philosophies_of_praxis: {
+        id: "philosophies_of_praxis",
+        name: "Philosophies of Praxis",
+        day: ["wednesday", "saturday"],
+        rarity: 4,
+        parent: "teachings_of_praxis",
+    },
+
+    nagadus_emerald_sliver: {
+        id: "nagadus_emerald_sliver",
+        name: "Nagadus Emerald Sliver",
+        rarity: 1,
+    },
+    nagadus_emerald_fragment: {
+        id: "nagadus_emerald_fragment",
+        name: "Nagadus Emerald Fragment",
+        rarity: 2,
+        parent: "nagadus_emerald_sliver",
+    },
+    nagadus_emerald_chunk: {
+        id: "nagadus_emerald_chunk",
+        name: "Nagadus Emerald Chunk",
+        rarity: 3,
+        parent: "nagadus_emerald_sliver",
+    },
+    nagadus_emerald_gemstone: {
+        id: "nagadus_emerald_gemstone",
+        name: "Nagadus Emerald Gemstone",
+        rarity: 4,
+        parent: "nagadus_emerald_sliver",
+    },
+
+    majestic_hooked_beak: {
+        id: "majestic_hooked_beak",
+        name: "Majestic Hooked Beak",
+        rarity: 5,
+    },
+    nilotpala_lotus: { id: "nilotpala_lotus", name: "Nilotpala Lotus" },
+
+    fungal_spores: {
+        id: "fungal_spores",
+        name: "Fungal Spores",
+    },
+    luminescent_pollen: {
+        id: "luminescent_pollen",
+        name: "Luminescent Pollen",
+    },
+    crystalline_cyst_dust: {
+        id: "crystalline_cyst_dust",
+        name: "Crystalline Cyst Dust",
+    },
+    rukkhashava_mushrooms: {
+        id: "rukkhashava_mushrooms",
+        name: "Rukkhashava Mushrooms",
     },
 };
