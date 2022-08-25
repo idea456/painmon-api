@@ -429,6 +429,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_admonition: {
         name: "Admonition",
+        day: ["monday", "thursday"],
         items: [
             itemList.teachings_of_admonition,
             itemList.guide_to_admonition,
@@ -438,6 +439,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_ingenuity: {
         name: "Ingenuity",
+        day: ["tuesday", "friday"],
         items: [
             itemList.teachings_of_ingenuity,
             itemList.guide_to_ingenuity,
@@ -447,6 +449,7 @@ export const ITEM_GROUP = {
     },
     teachings_of_praxis: {
         name: "Praxis",
+        day: ["wednesday", "saturday"],
         items: [
             itemList.teachings_of_praxis,
             itemList.guide_to_praxis,
