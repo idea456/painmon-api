@@ -197,11 +197,20 @@
 }
 
 .anemo {
-    background: rgb(95, 206, 138);
+    background: rgb(154, 255, 207);
     background: linear-gradient(
-        180deg,
-        rgba(95, 206, 138, 1) 0%,
-        rgba(203, 255, 223, 1) 100%
+        0deg,
+        rgba(154, 255, 207, 1) 0%,
+        rgba(60, 187, 159, 1) 100%
+    );
+}
+
+.dendro {
+    background: rgb(114, 195, 34);
+    background: linear-gradient(
+        0deg,
+        rgba(114, 195, 34, 1) 0%,
+        rgba(45, 253, 57, 1) 100%
     );
 }
 
@@ -230,13 +239,20 @@
     right: 0;
 }
 
-
 .five-star {
-    background: rgb(223,133,47);
-    background: linear-gradient(300deg, rgba(223,133,47,1) 0%, rgba(168,126,86,1) 100%);
+    background: rgb(223, 133, 47);
+    background: linear-gradient(
+        300deg,
+        rgba(223, 133, 47, 1) 0%,
+        rgba(168, 126, 86, 1) 100%
+    );
 }
 
 .four-star {
-    background: rgb(139,101,205);
-    background: linear-gradient(300deg, rgba(139,101,205,1) 0%, rgba(104,99,126,1) 100%);
+    background: rgb(139, 101, 205);
+    background: linear-gradient(
+        300deg,
+        rgba(139, 101, 205, 1) 0%,
+        rgba(104, 99, 126, 1) 100%
+    );
 }
