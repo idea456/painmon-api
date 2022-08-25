@@ -3,6 +3,45 @@ export const DOMAINS = {
         name: "Midsummer Courtyard",
         domains: [
             {
+                s: 5000,
+                id: "domain_of_blessing_fires_of_purification_i",
+                name: "Domain of Blessing: Fires of Purification I",
+                ar: 1,
+                level: 26,
+                reward: {
+                    adventureExp: "100",
+                    mora: "1350",
+                    friendshipExp: "10",
+                },
+                monsters: [
+                    { id: "cryo_slime", name: "Cryo Slime", count: 5 },
+                    {
+                        id: "large_cryo_slime",
+                        name: "Large Cryo Slime",
+                        count: 1,
+                    },
+                    { id: "hydro_slime", name: "Hydro Slime", count: 2 },
+                    {
+                        id: "large_hydro_slime",
+                        name: "Large Hydro Slime",
+                        count: 2,
+                    },
+                    {
+                        id: "wooden_shield_hilichurl_guard",
+                        name: "Wooden Shield Hilichurl Guard",
+                        count: 15,
+                    },
+                    {
+                        id: "cryo_abyss_mage",
+                        name: "Cryo Abyss Mage",
+                        count: 1,
+                    },
+                ],
+                disorder: [
+                    "When Overloaded is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                ],
+            },
+            {
                 s: 5001,
                 id: "domain_of_blessing_fires_of_purification_i",
                 name: "Domain of Blessing: Fires of Purification I",
@@ -14,16 +53,26 @@ export const DOMAINS = {
                     friendshipExp: "15",
                 },
                 monsters: [
-                    { id: "cryo_slime", name: "Cryo Slime", count: 3 },
-                    { id: "hydro_slime", name: "Hydro Slime", count: 7 },
-                    { id: "hilichurl", name: "Hilichurl", count: 14 },
+                    { id: "electro_slime", name: "Electro Slime", count: 7 },
                     {
-                        id: "cryo_abyss_mage",
-                        name: "Cryo Abyss Mage",
+                        id: "large_electro_slime",
+                        name: "Large Electro Slime",
+                        count: 2,
+                    },
+                    {
+                        id: "mutant_electro_slime",
+                        name: "Mutant Electro Slime",
+                        count: 2,
+                    },
+                    {
+                        id: "fatui_electro_cicin_mage",
+                        name: "Fatui Electro Cicin Mage",
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "When Melt is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                ],
             },
             {
                 s: 5002,
@@ -37,14 +86,22 @@ export const DOMAINS = {
                     friendshipExp: "15",
                 },
                 monsters: [
-                    { id: "electro_slime", name: "Electro Slime", count: 11 },
+                    { id: "cryo_slime", name: "Cryo Slime", count: 9 },
                     {
-                        id: "fatui_electro_cicin_mage",
-                        name: "Fatui Electro Cicin Mage",
+                        id: "large_cryo_slime",
+                        name: "Large Cryo Slime",
+                        count: 4,
+                    },
+                    {
+                        id: "cryo_abyss_mage",
+                        name: "Cryo Abyss Mage",
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Overloaded is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Superconduct is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
                 s: 5003,
@@ -58,28 +115,12 @@ export const DOMAINS = {
                     friendshipExp: "15",
                 },
                 monsters: [
-                    { id: "cryo_slime", name: "Cryo Slime", count: 13 },
+                    { id: "hydro_slime", name: "Hydro Slime", count: 8 },
                     {
-                        id: "cryo_abyss_mage",
-                        name: "Cryo Abyss Mage",
-                        count: 1,
+                        id: "large_hydro_slime",
+                        name: "Large Hydro Slime",
+                        count: 5,
                     },
-                ],
-                disorder: ["", ""],
-            },
-            {
-                s: 5004,
-                id: "domain_of_blessing_fires_of_purification_iv",
-                name: "Domain of Blessing: Fires of Purification IV",
-                ar: 35,
-                level: 69,
-                reward: {
-                    adventureExp: "100",
-                    mora: "2025",
-                    friendshipExp: "20",
-                },
-                monsters: [
-                    { id: "hydro_slime", name: "Hydro Slime", count: 13 },
                     {
                         id: "hydro_abyss_mage",
                         name: "Hydro Abyss Mage",
@@ -91,17 +132,20 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Melt is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Superconduct is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
-                s: 5005,
-                id: "domain_of_blessing_fires_of_purification_v",
-                name: "Domain of Blessing: Fires of Purification V",
-                ar: 40,
-                level: 80,
+                s: 5004,
+                id: "domain_of_blessing_fires_of_purification_iv",
+                name: "Domain of Blessing: Fires of Purification IV",
+                ar: 35,
+                level: 69,
                 reward: {
                     adventureExp: "100",
-                    mora: "2200",
+                    mora: "2025",
                     friendshipExp: "20",
                 },
                 monsters: [
@@ -116,17 +160,20 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Vaporize is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Electro-Charged is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
-                s: 5006,
-                id: "domain_of_blessing_fires_of_purification_vi",
-                name: "Domain of Blessing: Fires of Purification VI",
-                ar: 45,
-                level: 90,
+                s: 5005,
+                id: "domain_of_blessing_fires_of_purification_v",
+                name: "Domain of Blessing: Fires of Purification V",
+                ar: 40,
+                level: 80,
                 reward: {
                     adventureExp: "100",
-                    mora: "2525",
+                    mora: "2200",
                     friendshipExp: "20",
                 },
                 monsters: [
@@ -146,7 +193,43 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Melt is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Superconduct is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
+            },
+            {
+                s: 5006,
+                id: "domain_of_blessing_fires_of_purification_vi",
+                name: "Domain of Blessing: Fires of Purification VI",
+                ar: 45,
+                level: 90,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2525",
+                    friendshipExp: "20",
+                },
+                monsters: [],
+                disorder: [
+                    "When Overloaded is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Superconduct is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
+            },
+            {
+                s: 5007,
+                id: "domain_of_blessing_fires_of_purification_viii",
+                name: "Domain of Blessing: Fires of Purification VIII",
+                ar: 45,
+                level: 60,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2700",
+                    friendshipExp: "25",
+                },
+                monsters: [],
+                disorder: [
+                    "Pyro DMG dealt by all party members increased by 75%.",
+                ],
             },
         ],
         artifacts: [
@@ -172,32 +255,34 @@ export const DOMAINS = {
                 },
                 monsters: [
                     {
-                        id: "treasure_hoarder_cryo_potioneer",
-                        name: "Treasure Hoarder Cryo Potioneer",
+                        id: "treasure_hoarders_cryo_potioneer",
+                        name: "Treasure Hoarders: Cryo Potioneer",
                         count: 10,
                     },
                     {
-                        id: "treasure_hoarder_handyman",
-                        name: "Treasure Hoarder Handyman",
+                        id: "treasure_hoarders_handyman",
+                        name: "Treasure Hoarders: Handyman",
                         count: 5,
                     },
                     {
-                        id: "treasure_hoarder_pugilist",
-                        name: "Treasure Hoarder Pugilist",
+                        id: "treasure_hoarders_-_pugilist",
+                        name: "Treasure Hoarders - Pugilist",
                         count: 5,
                     },
                     {
-                        id: "treasure_hoarder_gravedigger",
-                        name: "Treasure Hoarder Gravedigger",
+                        id: "treasure_hoarders_gravedigger",
+                        name: "Treasure Hoarders: Gravedigger",
                         count: 2,
                     },
                     {
-                        id: "treasure_hoarder_seaman",
-                        name: "Treasure Hoarder Seaman",
+                        id: "treasure_hoarders_-_seaman",
+                        name: "Treasure Hoarders - Seaman",
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Physical DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5009,
@@ -212,33 +297,33 @@ export const DOMAINS = {
                 },
                 monsters: [
                     {
-                        id: "treasure_hoarder_scout",
-                        name: "Treasure Hoarder Scout",
+                        id: "treasure_hoarders_-_scout",
+                        name: "Treasure Hoarders - Scout",
                         count: 4,
                     },
                     {
-                        id: "treasure_hoarder_pyro_potioneer",
-                        name: "Treasure Hoarder Pyro Potioneer",
+                        id: "treasure_hoarders_pyro_potioneer",
+                        name: "Treasure Hoarders: Pyro Potioneer",
                         count: 3,
                     },
                     {
-                        id: "treasure_hoarder_hydro_potioneer",
-                        name: "Treasure Hoarder Hydro Potioneer",
+                        id: "treasure_hoarders_hydro_potioneer",
+                        name: "Treasure Hoarders: Hydro Potioneer",
                         count: 5,
                     },
                     {
-                        id: "treasure_hoarder_handyman",
-                        name: "Treasure Hoarder Handyman",
+                        id: "treasure_hoarders_handyman",
+                        name: "Treasure Hoarders: Handyman",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_crusher",
-                        name: "Treasure Hoarder Crusher",
+                        id: "treasure_hoarders_-_crusher",
+                        name: "Treasure Hoarders - Crusher",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_pugilist",
-                        name: "Treasure Hoarder Pugilist",
+                        id: "treasure_hoarders_-_pugilist",
+                        name: "Treasure Hoarders - Pugilist",
                         count: 1,
                     },
                     {
@@ -247,7 +332,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Physical DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5010,
@@ -262,38 +349,38 @@ export const DOMAINS = {
                 },
                 monsters: [
                     {
-                        id: "treasure_hoarder_scout",
-                        name: "Treasure Hoarder Scout",
+                        id: "treasure_hoarders_-_scout",
+                        name: "Treasure Hoarders - Scout",
                         count: 2,
                     },
                     {
-                        id: "treasure_hoarder_pyro_potioneer",
-                        name: "Treasure Hoarder Pyro Potioneer",
+                        id: "treasure_hoarders_pyro_potioneer",
+                        name: "Treasure Hoarders: Pyro Potioneer",
                         count: 4,
                     },
                     {
-                        id: "treasure_hoarder_electro_potioneer",
-                        name: "Treasure Hoarder Electro Potioneer",
+                        id: "treasure_hoarders_electro_potioneer",
+                        name: "Treasure Hoarders: Electro Potioneer",
                         count: 4,
                     },
                     {
-                        id: "treasure_hoarder_handyman",
-                        name: "Treasure Hoarder Handyman",
+                        id: "treasure_hoarders_handyman",
+                        name: "Treasure Hoarders: Handyman",
                         count: 4,
                     },
                     {
-                        id: "treasure_hoarder_crusher",
-                        name: "Treasure Hoarder Crusher",
+                        id: "treasure_hoarders_-_crusher",
+                        name: "Treasure Hoarders - Crusher",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_pugilist",
-                        name: "Treasure Hoarder Pugilist",
+                        id: "treasure_hoarders_-_pugilist",
+                        name: "Treasure Hoarders - Pugilist",
                         count: 2,
                     },
                     {
-                        id: "treasure_hoarder_gravedigger",
-                        name: "Treasure Hoarder Gravedigger",
+                        id: "treasure_hoarders_gravedigger",
+                        name: "Treasure Hoarders: Gravedigger",
                         count: 1,
                     },
                     {
@@ -307,7 +394,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Physical DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5011,
@@ -322,28 +411,28 @@ export const DOMAINS = {
                 },
                 monsters: [
                     {
-                        id: "treasure_hoarder_pyro_potioneer",
-                        name: "Treasure Hoarder Pyro Potioneer",
+                        id: "treasure_hoarders_pyro_potioneer",
+                        name: "Treasure Hoarders: Pyro Potioneer",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_hydro_potioneer",
-                        name: "Treasure Hoarder Hydro Potioneer",
+                        id: "treasure_hoarders_hydro_potioneer",
+                        name: "Treasure Hoarders: Hydro Potioneer",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_electro_potioneer",
-                        name: "Treasure Hoarder Electro Potioneer",
+                        id: "treasure_hoarders_electro_potioneer",
+                        name: "Treasure Hoarders: Electro Potioneer",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_cryo_potioneer",
-                        name: "Treasure Hoarder Cryo Potioneer",
+                        id: "treasure_hoarders_cryo_potioneer",
+                        name: "Treasure Hoarders: Cryo Potioneer",
                         count: 1,
                     },
                     {
-                        id: "treasure_hoarder_seaman",
-                        name: "Treasure Hoarder Seaman",
+                        id: "treasure_hoarders_-_seaman",
+                        name: "Treasure Hoarders - Seaman",
                         count: 1,
                     },
                     {
@@ -357,7 +446,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Physical DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5012,
@@ -372,8 +463,8 @@ export const DOMAINS = {
                 },
                 monsters: [
                     {
-                        id: "treasure_hoarder_cryo_potioneer",
-                        name: "Treasure Hoarder Cryo Potioneer",
+                        id: "treasure_hoarders_cryo_potioneer",
+                        name: "Treasure Hoarders: Cryo Potioneer",
                         count: 3,
                     },
                     {
@@ -387,7 +478,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Physical DMG dealt by all party members increased by 75%.",
+                ],
             },
         ],
         artifacts: [
@@ -424,7 +517,9 @@ export const DOMAINS = {
                         count: 4,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "A backlash will occur when opponents hit a character protected by a shield, unleashing a shockwave originating at the attacking opponent's position that deals one instance of AoE DMG. Can occur once every 2s.",
+                ],
             },
             {
                 s: 5015,
@@ -454,7 +549,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "A backlash will occur when opponents hit a character protected by a shield, unleashing a shockwave originating at the attacking opponent's position that deals one instance of AoE DMG. Can occur once every 2s.",
+                ],
             },
             {
                 s: 5016,
@@ -484,7 +581,10 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "A backlash will occur when opponents hit a character protected by a shield, unleashing a shockwave originating at the attacking opponent's position that deals one instance of AoE DMG. Can occur once every 2s.",
+                    null,
+                ],
             },
             {
                 s: 5017,
@@ -509,7 +609,10 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "A backlash will occur when opponents hit a character protected by a shield, unleashing a shockwave originating at the attacking opponent's position that deals one instance of AoE DMG. Can occur once every 2s.",
+                    null,
+                ],
             },
         ],
         artifacts: [
@@ -517,6 +620,85 @@ export const DOMAINS = {
             "martial_artist",
             "tenacity_of_the_millelith",
             "pale_flame",
+        ],
+    },
+    spire_of_solitary_enlightenment: {
+        name: "Spire of Solitary Enlightenment",
+        domains: [
+            {
+                s: 5050,
+                id: "domain_of_blessing_seven_senses_i",
+                name: "Domain of Blessing: Seven Senses I",
+                ar: 30,
+                level: 59,
+                reward: {
+                    adventureExp: "100",
+                    mora: "1850",
+                    friendshipExp: "15",
+                },
+                monsters: [],
+                disorder: [
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                ],
+            },
+            {
+                s: 5051,
+                id: "domain_of_blessing_seven_senses_ii",
+                name: "Domain of Blessing: Seven Senses II",
+                ar: 35,
+                level: 69,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2025",
+                    friendshipExp: "20",
+                },
+                monsters: [],
+                disorder: [
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                ],
+            },
+            {
+                s: 5052,
+                id: "domain_of_blessing_seven_senses_iii",
+                name: "Domain of Blessing: Seven Senses III",
+                ar: 40,
+                level: 80,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2200",
+                    friendshipExp: "20",
+                },
+                monsters: [],
+                disorder: [
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                ],
+            },
+            {
+                s: 5053,
+                id: "domain_of_blessing_seven_senses_iv",
+                name: "Domain of Blessing: Seven Senses IV",
+                ar: 45,
+                level: 90,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2525",
+                    friendshipExp: "20",
+                },
+                monsters: [],
+                disorder: [
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                    "All party members' Elemental Mastery is increased based on 10% of the entire party's combined Elemental Mastery. This effect will be refreshed every 20s after recalculation.",
+                ],
+            },
+        ],
+        artifacts: [
+            "tiny_miracle",
+            "gambler",
+            "deepwood_memories",
+            "gilded_dreams",
         ],
     },
     domain_of_guyun: {
@@ -546,7 +728,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Electro-Charged DMG increased by 150%, and its AoE is increased by 100%.",
+                ],
             },
             {
                 s: 5101,
@@ -572,7 +756,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "When Overloaded is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                ],
             },
             {
                 s: 5102,
@@ -598,7 +784,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "When Superconduct is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                ],
             },
             {
                 s: 5103,
@@ -630,7 +818,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Electro-Charged DMG increased by 150%, and its AoE is increased by 100%.",
+                ],
             },
             {
                 s: 5104,
@@ -651,7 +841,11 @@ export const DOMAINS = {
                     },
                     { id: "ruin_guard", name: "Ruin Guard", count: 2 },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "When Overloaded is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Melt is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                    "When Vaporize is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
                 s: 5105,
@@ -673,7 +867,27 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "When Superconduct is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Melt is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                    "When Vaporize is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
+            },
+            {
+                s: 5106,
+                id: "domain_of_blessing_spring_thunder_vii",
+                name: "Domain of Blessing: Spring Thunder VII",
+                ar: 45,
+                level: 60,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2700",
+                    friendshipExp: "25",
+                },
+                monsters: [],
+                disorder: [
+                    "Electro DMG dealt by all party members increased by 75%.",
+                ],
             },
         ],
         artifacts: [
@@ -710,7 +924,10 @@ export const DOMAINS = {
                         count: 6,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "The duration of the Frozen status effect is greatly increased.",
+                    "When Superconduct is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                ],
             },
             {
                 s: 5108,
@@ -740,7 +957,10 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Melt is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Overloaded is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
                 s: 5109,
@@ -785,7 +1005,10 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Superconduct is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Overloaded is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
             },
             {
                 s: 5110,
@@ -815,7 +1038,26 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "When Melt is triggered, an Energy Blast will occur, dealing DMG to surrounding opponents.",
+                    "When Overloaded is triggered, you will be hit by a powerful blast, causing your character to take DMG.",
+                ],
+            },
+            {
+                s: 5111,
+                id: "domain_of_blessing_frost_and_lightning_v",
+                name: "Domain of Blessing: Frost and Lightning V",
+                ar: 45,
+                level: 60,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2700",
+                    friendshipExp: "25",
+                },
+                monsters: [],
+                disorder: [
+                    "When Melt is triggered by Elemental DMG, the damage caused by Melt is increased by 100%.",
+                ],
             },
         ],
         artifacts: [
@@ -851,7 +1093,9 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Geo DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5113,
@@ -876,7 +1120,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Geo DMG dealt by all party members increased by 75%.",
+                ],
             },
             {
                 s: 5114,
@@ -906,7 +1152,9 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: [""],
+                disorder: [
+                    "Geo DMG dealt by all party members increased by 75%.",
+                ],
             },
         ],
         artifacts: [
@@ -921,8 +1169,8 @@ export const DOMAINS = {
         domains: [
             {
                 s: 5120,
-                id: "domain_of_blessing_elegaic_rime_i",
-                name: "Domain of Blessing: Elegaic Rime I",
+                id: "domain_of_blessing_elegiac_rime_i",
+                name: "Domain of Blessing: Elegiac Rime I",
                 ar: 30,
                 level: 59,
                 reward: {
@@ -943,12 +1191,16 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "Characters in the challenge will continuously accumulate Sheer Cold, and will lose HP after Sheer Cold reaches its limit.",
+                    "The platforms in this challenge will intermittently switch between the Subzero and Warm statuses.",
+                    "The areas affected by the Warm status will diminish Sheer Cold. The areas affected by the Subzero status will accelerate Sheer Cold's accumulation.",
+                ],
             },
             {
                 s: 5121,
-                id: "domain_of_blessing_elegaic_rime_ii",
-                name: "Domain of Blessing: Elegaic Rime II",
+                id: "domain_of_blessing_elegiac_rime_ii",
+                name: "Domain of Blessing: Elegiac Rime II",
                 ar: 35,
                 level: 69,
                 reward: {
@@ -974,12 +1226,16 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "Characters in the challenge will continuously accumulate Sheer Cold, and will lose HP after Sheer Cold reaches its limit.",
+                    "The platforms in this challenge will intermittently switch between the Subzero and Warm statuses.",
+                    "The areas affected by the Warm status will diminish Sheer Cold. The areas affected by the Subzero status will accelerate Sheer Cold's accumulation.",
+                ],
             },
             {
                 s: 5122,
-                id: "domain_of_blessing_elegaic_rime_iii",
-                name: "Domain of Blessing: Elegaic Rime III",
+                id: "domain_of_blessing_elegiac_rime_iii",
+                name: "Domain of Blessing: Elegiac Rime III",
                 ar: 40,
                 level: 80,
                 reward: {
@@ -1009,12 +1265,16 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "Characters in the challenge will continuously accumulate Sheer Cold, and will lose HP after Sheer Cold reaches its limit.",
+                    "The platforms in this challenge will intermittently switch between the Subzero and Warm statuses.",
+                    "The areas affected by the Warm status will diminish Sheer Cold. The areas affected by the Subzero status will accelerate Sheer Cold's accumulation.",
+                ],
             },
             {
                 s: 5123,
-                id: "domain_of_blessing_elegaic_rime_iv",
-                name: "Domain of Blessing: Elegaic Rime IV",
+                id: "domain_of_blessing_elegiac_rime_iv",
+                name: "Domain of Blessing: Elegiac Rime IV",
                 ar: 45,
                 level: 90,
                 reward: {
@@ -1034,7 +1294,11 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "Characters in the challenge will continuously accumulate Sheer Cold, and will lose HP after Sheer Cold reaches its limit.",
+                    "The platforms in this challenge will intermittently switch between the Subzero and Warm statuses.",
+                    "The areas affected by the Warm status will diminish Sheer Cold. The areas affected by the Subzero status will accelerate Sheer Cold's accumulation.",
+                ],
             },
         ],
         artifacts: [
@@ -1042,6 +1306,97 @@ export const DOMAINS = {
             "gambler",
             "blizzard_strayer",
             "heart_of_depth",
+        ],
+    },
+    the_lost_valley: {
+        name: "The Lost Valley",
+        domains: [
+            {
+                s: 5125,
+                id: "domain_of_blessing_machine_nest_i",
+                name: "Domain of Blessing: Machine Nest I",
+                ar: 30,
+                level: 59,
+                reward: {
+                    adventureExp: "100",
+                    mora: "1850",
+                    friendshipExp: "15",
+                },
+                monsters: [
+                    { id: "ruin_guard", name: "Ruin Guard", count: 1 },
+                    { id: "ruin_destroyer", name: "Ruin Destroyer", count: 1 },
+                ],
+                disorder: [
+                    "When characters use Elemental Skills, a shockwave will be unleashed, dealing True DMG.",
+                ],
+            },
+            {
+                s: 5126,
+                id: "domain_of_blessing_machine_nest_ii",
+                name: "Domain of Blessing: Machine Nest II",
+                ar: 35,
+                level: 69,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2025",
+                    friendshipExp: "20",
+                },
+                monsters: [
+                    { id: "ruin_guard", name: "Ruin Guard", count: 1 },
+                    { id: "ruin_scout", name: "Ruin Scout", count: 1 },
+                    { id: "ruin_cruiser", name: "Ruin Cruiser", count: 1 },
+                    { id: "ruin_destroyer", name: "Ruin Destroyer", count: 1 },
+                ],
+                disorder: [
+                    "When characters use Elemental Skills, a shockwave will be unleashed, dealing True DMG.",
+                ],
+            },
+            {
+                s: 5127,
+                id: "domain_of_blessing_machine_nest_iii",
+                name: "Domain of Blessing: Machine Nest III",
+                ar: 40,
+                level: 80,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2200",
+                    friendshipExp: "20",
+                },
+                monsters: [
+                    { id: "ruin_scout", name: "Ruin Scout", count: 1 },
+                    { id: "ruin_cruiser", name: "Ruin Cruiser", count: 2 },
+                    { id: "ruin_destroyer", name: "Ruin Destroyer", count: 2 },
+                ],
+                disorder: [
+                    "When characters use Elemental Skills, a shockwave will be unleashed, dealing True DMG.",
+                ],
+            },
+            {
+                s: 5128,
+                id: "domain_of_blessing_machine_nest_iv",
+                name: "Domain of Blessing: Machine Nest IV",
+                ar: 45,
+                level: 90,
+                reward: {
+                    adventureExp: "100",
+                    mora: "2525",
+                    friendshipExp: "20",
+                },
+                monsters: [
+                    { id: "ruin_grader", name: "Ruin Grader", count: 1 },
+                    { id: "ruin_cruiser", name: "Ruin Cruiser", count: 1 },
+                    { id: "ruin_destroyer", name: "Ruin Destroyer", count: 1 },
+                ],
+                disorder: [
+                    "When characters use Elemental Skills, a shockwave will be unleashed, dealing True DMG.",
+                ],
+            },
+        ],
+        artifacts: [
+            "martial_artist",
+            "gambler",
+            "vermillion_hereafter",
+            "echoes_of_an_offering",
         ],
     },
     "momiji-dyed_court": {
@@ -1081,7 +1436,11 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "The platforms in this challenge will intermittently switch between the Flame Boon and Frost Boon statuses. Characters will obtain different effects depending on the status of the platform they are on.",
+                    "Flame Boon: active characters will gain a 60% Pyro DMG Bonus.",
+                    "Frost Boon: active characters will gain a 60% Cryo DMG Bonus.",
+                ],
             },
             {
                 s: 5201,
@@ -1106,9 +1465,14 @@ export const DOMAINS = {
                         count: 3,
                     },
                     {
+                        id: "large_electro_slime",
+                        name: "Large Electro Slime",
+                        count: 1,
+                    },
+                    {
                         id: "mutant_electro_slime",
                         name: "Mutant Electro Slime",
-                        count: 2,
+                        count: 1,
                     },
                     {
                         id: "crackling_axe_mitachurl",
@@ -1116,7 +1480,11 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "The platforms in this challenge will intermittently switch between the Flame Boon and Frost Boon statuses. Characters will obtain different effects depending on the status of the platform they are on.",
+                    "Flame Boon: active characters will gain a 60% Pyro DMG Bonus.",
+                    "Frost Boon: active characters will gain a 60% Cryo DMG Bonus.",
+                ],
             },
             {
                 s: 5202,
@@ -1146,7 +1514,11 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "The platforms in this challenge will intermittently switch between the Flame Boon and Frost Boon statuses. Characters will obtain different effects depending on the status of the platform they are on.",
+                    "Flame Boon: active characters will gain a 60% Pyro DMG Bonus.",
+                    "Frost Boon: active characters will gain a 60% Cryo DMG Bonus.",
+                ],
             },
             {
                 s: 5203,
@@ -1176,7 +1548,11 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", "", ""],
+                disorder: [
+                    "The platforms in this challenge will intermittently switch between the Flame Boon and Frost Boon statuses. Characters will obtain different effects depending on the status of the platform they are on.",
+                    "Flame Boon: active characters will gain a 60% Pyro DMG Bonus.",
+                    "Frost Boon: active characters will gain a 60% Cryo DMG Bonus.",
+                ],
             },
         ],
         artifacts: [
@@ -1213,7 +1589,10 @@ export const DOMAINS = {
                     },
                     { id: "hydro_slime", name: "Hydro Slime", count: 7 },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "All characters in the party gain a 40% Electro DMG Bonus.",
+                    "When an active character triggers Electro-Charged on opponents, they will trigger a shockwave that will deal True DMG to opponents. A shockwave can be triggered in this manner once every 3s.",
+                ],
             },
             {
                 s: 5205,
@@ -1249,7 +1628,10 @@ export const DOMAINS = {
                         count: 3,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "All characters in the party gain a 40% Electro DMG Bonus.",
+                    "When an active character triggers Electro-Charged on opponents, they will trigger a shockwave that will deal True DMG to opponents. A shockwave can be triggered in this manner once every 3s.",
+                ],
             },
             {
                 s: 5206,
@@ -1279,7 +1661,10 @@ export const DOMAINS = {
                         count: 2,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "All characters in the party gain a 40% Electro DMG Bonus.",
+                    "When an active character triggers Electro-Charged on opponents, they will trigger a shockwave that will deal True DMG to opponents. A shockwave can be triggered in this manner once every 3s.",
+                ],
             },
             {
                 s: 5207,
@@ -1309,7 +1694,10 @@ export const DOMAINS = {
                         count: 1,
                     },
                 ],
-                disorder: ["", ""],
+                disorder: [
+                    "All characters in the party gain a 40% Electro DMG Bonus.",
+                    "When an active character triggers Electro-Charged on opponents, they will trigger a shockwave that will deal True DMG to opponents. A shockwave can be triggered in this manner once every 3s.",
+                ],
             },
         ],
         artifacts: [

@@ -29,4 +29,9 @@ export const ELEMENTS = {
         name: "Cryo",
         simpleName: "Ice",
     },
+    dendro: {
+        id: "dendro",
+        name: "Dendro",
+        simpleName: "Grass",
+    },
 };
