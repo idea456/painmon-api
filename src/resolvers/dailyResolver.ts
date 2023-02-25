@@ -1,8 +1,9 @@
 import { Query, Resolver } from "type-graphql";
 import { Daily } from "../schemas/daily";
 import { ItemGroup } from "../schemas/item";
-import { generateScreenshot } from "../plugins/image-generator/utils/browser";
-import { compare, getterAll } from "../utils/accessors";
+import { Base64 } from "js-base64";
+import axios from "axios";
+import { compare } from "../utils/accessors";
 import { ITEM_GROUP } from "../data/itemGroup";
 import { Character } from "../schemas/character";
 import { CHARACTERS } from "../data/characters";
@@ -35,13 +36,19 @@ export class DailyResolver {
         materials = await compare<ItemGroup>(
             ITEM_GROUP,
             (item) =>
-                day && item.day && (item.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday"),
+                day &&
+                item.day &&
+                (item.day.includes(day.toLowerCase()) ||
+                    day.toLowerCase() === "sunday"),
         );
-        
+
         const characterTodayComparator = (char) => {
             let check = false;
             char.material["book"].map((item) => {
-                if (item.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday") {
+                if (
+                    item.day.includes(day.toLowerCase()) ||
+                    day.toLowerCase() === "sunday"
+                ) {
                     check = true;
                     if (item.parent) {
                         // item already added in the items
@@ -78,22 +85,27 @@ export class DailyResolver {
             characterTodayComparator,
         );
 
-        items["weapons"] = {}
+        items["weapons"] = {};
 
         const weaponsTodayComparator = (weapon) => {
             let check = false;
             let material = weapon["ascension"][0].items[0].item;
-            if (material.day.includes(day.toLowerCase()) || day.toLowerCase() === "sunday") {
+            if (
+                material.day.includes(day.toLowerCase()) ||
+                day.toLowerCase() === "sunday"
+            ) {
                 if (!(material.id in items["weapons"])) {
-                    items["weapons"][material.id] = [{
-                        id: weapon.id,
-                        rarity: weapon.rarity,
-                    }]
+                    items["weapons"][material.id] = [
+                        {
+                            id: weapon.id,
+                            rarity: weapon.rarity,
+                        },
+                    ];
                 } else {
                     items["weapons"][material.id].push({
                         id: weapon.id,
                         rarity: weapon.rarity,
-                    })
+                    });
                 }
                 return true;
             }
@@ -103,41 +115,45 @@ export class DailyResolver {
             WEAPONS,
             weaponsTodayComparator,
         );
-        // console.log("daily items: ", items["weapons"]);
 
-        // items["weapons"] = weapons.map(w => {
-        //     return {
-        //         id: w.id, rarity: w.rarity
-        //     }
-        // });
-
-        var store = require('store')
-        console.log(store.get('dailyImage'))
-        let dailyImage = store.get('dailyImage')
+        var store = require("store");
+        console.log(store.get("dailyImage"));
+        let dailyImage = store.get("dailyImage");
         // store.set('user', { name:'Marcus' })
         if (dailyImage) {
-            let cachedDate = new Date(dailyImage.date)
+            let cachedDate = new Date(dailyImage.date);
             // let hourDifference = Math.abs(today.getTime() - cachedDate.getTime()) / 3600000;
             // if the daily image is no longer relevant for today
-            if ((cachedDate.getDate() < today.getDate()) || (cachedDate.getDate() == today.getDate() && !(today.getHours() >= 0 && today.getHours() <= 4))) {
+            if (
+                cachedDate.getDate() < today.getDate() ||
+                (cachedDate.getDate() == today.getDate() &&
+                    !(today.getHours() >= 0 && today.getHours() <= 4))
+            ) {
+                console.log("generating");
                 // generate new daily image for the new day
+                const { data } = await axios.get(
+                    `http://localhost:8000/daily?items=${Base64.btoa(
+                        JSON.stringify(items),
+                    )}`,
+                );
                 dailyImage = {
                     date: today,
-                    decodedImage: await generateScreenshot(
-                        "http://localhost:8000/views/daily.html?items=",
-                        items),
-                }
+                    decodedImage: data,
+                };
             }
         } else {
+            console.log("generating 2");
+            const { data } = await axios.get(
+                `http://localhost:8000/daily?items=${Base64.btoa(
+                    JSON.stringify(items),
+                )}`,
+            );
             dailyImage = {
                 date: today,
-                decodedImage: await generateScreenshot(
-                    "http://localhost:8000/views/daily.html?items=",
-                    items,
-                ),
-            }
+                decodedImage: data,
+            };
         }
-        store.set('dailyImage',  dailyImage)
+        store.set("dailyImage", dailyImage);
 
         return {
             date: today,
